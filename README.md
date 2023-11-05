@@ -31,6 +31,9 @@ El simulador está desarrollado íntegramente en JavaScript como una aplicación
 cliente, sin necesidad de un servidor. Se puede acceder a una versión ejecutable alojada en
 GitHub en [esta dirección](https://asi-uniovi.github.io/simct).
 
+Además, se puede descargar [este archivo](https://asi-uniovi.github.io/simct/simct.zip) y
+ejecutarlo localmente.
+
 ## Desarrollo
 
 El simulador está publicado como software libre con licencia MIT. Para
