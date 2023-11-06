@@ -6,7 +6,8 @@ SimCT es un simulador web del Computador Teórico (CT) usado en la Uniersidad de
 Oviedo (UniOvi). El computador fue creado por profesores del [Área de
 Arquitectura de Computadores (ATC)](https://www.atc.uniovi.es/) de la
 universidad. La versión inicial del simulador web ha sido desarrollada como 
-Trabajo Fin de Máster y está disponible en [este repositorio](https://github.com/jesusandres/simct).
+Trabajo Fin de Máster por Jesús Andrés Lorenzana y está disponible en
+[este repositorio](https://github.com/jesusandres/simct).
 
 El simulador ofrece la posibilidad de configurar la memoria y los dispositivos
 periféricos del CT, así como cargar y ejecutar programas. Además, permite
