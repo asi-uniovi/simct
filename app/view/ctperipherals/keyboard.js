@@ -28,7 +28,7 @@ class CTKeyboard extends Observer {
   static labels = {
     buffer: 'labels.ctkeyboard.buffer',
     buffer_hex: 'labels.ctkeyboard.buffer_hex',
-    buffer_car: 'labels.ctkeyboard.buffer_car',
+    buffer_char: 'labels.ctkeyboard.buffer_char',
     caps: 'labels.ctkeyboard.caps',
     address: 'labels.ctkeyboard.address',
     vector: 'labels.ctkeyboard.vector',
@@ -72,7 +72,7 @@ class CTKeyboard extends Observer {
     table.append(body)
 
     hex.text(_jStr(CTKeyboard.labels.buffer_hex).translate())
-    car.text(_jStr(CTKeyboard.labels.buffer_car).translate())
+    car.text(_jStr(CTKeyboard.labels.buffer_char).translate())
 
     for (let i = 0; i < buffer.length; i++) {
       const tr = _jsc({ s: 'tr' })

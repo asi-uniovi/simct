@@ -75,7 +75,7 @@ const en = {
   'labels.view.window_title_memedit': 'Memory Editor',
   'labels.view.window_title_memcfg': 'Memory Configuration',
   'labels.view.window_title_keyboard_data': 'Keyboard info',
-  'labels.view.window_title_screen_data': 'Keyboard info',
+  'labels.view.window_title_screen_data': 'Screen info',
   'labels.view.window_title_lights_data': 'Lights info',
   'labels.view.window_title_savesim': 'Save simulation',
   'labels.view.window_title_savesim_label': 'File Name: ',
@@ -83,7 +83,7 @@ const en = {
 
   // Device data forms
   'labels.deviceform.form_name': 'Name',
-  'labels.deviceform.form_address': 'Base Addr',
+  'labels.deviceform.form_address': 'Base Addr.',
   'labels.deviceform.form_vector': 'Int. Number',
   'labels.deviceform.form_priority': 'Priority. (0-255)',
   'labels.deviceform.form_int': 'Generares int.',
@@ -91,21 +91,21 @@ const en = {
   // Keyboard
   'labels.ctkeyboard.buffer': 'BUFFER',
   'labels.ctkeyboard.buffer_hex': 'HEX',
-  'labels.ctkeyboard.buffer_car': 'CAR',
+  'labels.ctkeyboard.buffer_char': 'CHAR',
   'labels.ctkeyboard.caps': 'Caps Lock',
-  'labels.ctkeyboard.address': 'Addr',
-  'labels.ctkeyboard.vector': 'Vec',
-  'labels.ctkeyboard.priority': 'Pri',
-  'labels.ctkeyboard.int': 'Int',
+  'labels.ctkeyboard.address': 'Addr.',
+  'labels.ctkeyboard.vector': 'Vec.',
+  'labels.ctkeyboard.priority': 'Prio.',
+  'labels.ctkeyboard.int': 'Int.',
   'labels.ctkeyboard.state': 'State',
-  'errors.ctkeyboard.keyboard_must': 'Keyboard must be created before connecting it to the computer',
+  'errors.ctkeyboard.keyboard_must': 'The keyboard must be created before connecting it to the computer',
 
   // Lights device
-  'labels.ctlights.address': 'Dir',
-  'labels.ctlights.vector': 'Vec',
-  'labels.ctlights.priority': 'Pri',
-  'labels.ctlights.int': 'Int',
-  'labels.ctlights.genint': 'Gen Int',
+  'labels.ctlights.address': 'Dir.',
+  'labels.ctlights.vector': 'Vec.',
+  'labels.ctlights.priority': 'Prio.',
+  'labels.ctlights.int': 'Int.',
+  'labels.ctlights.genint': 'Gen. Int.',
   'labels.ctlights.group_lights': 'Lights/output',
   'labels.ctlights.group_switches': 'Switches/input',
 
@@ -118,7 +118,7 @@ const en = {
 
   // Signal selector
   'label.signalset.signal_selection_btok': 'Save signals',
-  'label.signalset.signal_selection_deactivate': 'Deactivate All',
+  'label.signalset.signal_selection_deactivate': 'Deactivate all',
   'label.signalset.signal_selection': 'Signal selection',
 
   // System configuration
@@ -131,10 +131,10 @@ const en = {
   // Errors
   'error.computer.loading_program': 'No program has been loaded',
   'error.computer.loading_memory': 'Memory has not been loaded',
-  'error.computer.loading_signals_nomanual': 'You only can use the signal selector in manual mode',
+  'error.computer.loading_signals_nomanual': 'You can use the signal selector in manual mode only',
 
-  'error.IOManager.memorylink_missing': 'Memory has not been linked to I/O manager',
-  'error.IOManager.io_vectors': 'First 256 memory positions are reserved for Interruption vector use',
+  'error.IOManager.memorylink_missing': 'Memory has not been linked to the I/O manager',
+  'error.IOManager.io_vectors': 'First 256 memory positions are reserved for the interrupt vector table',
   'error.IOManager.duplicate_name': 'A device with the same name already exists',
 
   'error.memory.address_space': 'Given address {0} is out of directionable space {1}',
@@ -143,7 +143,7 @@ const en = {
   'error.memory.module_collision': 'There is a memory module in the given address',
   'error.memory.module_nomodule': 'There is no memory module in the given address',
   'error.memory.io_module_present': 'There is an I/O device in the given address',
-  'error.memory.nomodule_noes': 'There is no memory module in the given address and no I/O device',
+  'error.memory.nomodule_noes': 'No memory module or I/O device exists at the specified address',
 
   'error.memory.notsupported': 'Memory doesn\'t support this operation mode',
 
@@ -151,28 +151,28 @@ const en = {
   'error.signalset.same_group': 'The selected signals from {0} group are incompatible',
   'error.signalset.read_ongoing': 'There is an ongoing read operation and the signal selection is not possible',
   'error.signalset.write_ongoing': 'There is an ongoing write operation and the signal selection is not possible',
-  'error.signalset.badsignal': 'Signal is not valid',
+  'error.signalset.badsignal': 'Invalid signal',
   'error.signalset.multiple_upload_group': 'Selected upload signals are not compatible',
-  'error.signalset.inta_read': 'Selecting INTA is not possible, with a read operation ongoing',
-  'error.signalset.bad_sr': 'SR signals selected are not compatible',
+  'error.signalset.inta_read': 'Selecting INTA is not possible with a read operation ongoing',
+  'error.signalset.bad_sr': 'Selected SR signals are not compatible',
   'error.signalset.signal_present': 'Duplicate signal selection',
 
   'error.keyboard.buffer-full': 'Keyboard buffer is full',
   'error.keyboard.out-of-bounds': 'Address memory is out of bounds',
-  'error.keyboard.write-only-ec': 'In the keyboard you can only write on state registry, position 1',
+  'error.keyboard.write-only-ec': 'In the keyboard, you can only write on the status register, position 1',
 
   'error.lights.out-of-bounds': 'There is only one accesible position',
-  'error._jscerror.bad_property': 'Not valid property',
-  'error._jscerror.bad_attribute': 'Not valid attribute',
+  'error._jscerror.bad_property': 'Invalid property',
+  'error._jscerror.bad_attribute': 'Invalid attribute',
 
-  'error.instructions.length_16': 'Only 0 and 1 characters are allowed and the instruction must be 16bit long',
+  'error.instructions.length_16': 'The instruction must be 16 bits long and can only consist of 0 and 1 characters',
   'error.instructions.badinstruction': 'Instruction {0} can\'t be located',
   'error.instructions.duplicated': 'Multiple coincidences have been found, please check the opcodes',
   'error.instructions.structure': 'Instruction has a bad structure',
 
   'error.forms.hex16': 'Value must be hexadecimal and 16 bit long',
 
-  'errors.deviceform.input_device': 'Base address is required, in case of Interruption generation, Interruption vector and priority are required',
+  'errors.deviceform.input_device': 'Base address is required; in case of interrupt generation, interrupt vector and priority are required',
   'errors.deviceform.output_device': 'Base addres is required'
 }
 

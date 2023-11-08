@@ -39,7 +39,7 @@ const es = {
   'labels.menu.menu_utils_io_screen': 'Conectar Pantalla',
   'labels.menu.menu_utils_io_lights': 'Conectar Luces',
   'labels.menu.menu_mode_label': 'MODO',
-  'labels.menu.menu_lang_confirm': 'Si usted cambia de idioma en este momento perderá su trabajo, puede guardar la simulación si así lo desea y volver a cargarla en el nuevo idioma',
+  'labels.menu.menu_lang_confirm': 'Si usted cambia de idioma en este momento perderá su trabajo. Puede guardar la simulación si así lo desea y volver a cargarla en el nuevo idioma',
 
   // Language Menu
   'labels.simulator.language_es': 'ES',
@@ -91,21 +91,21 @@ const es = {
   // Keyboard
   'labels.ctkeyboard.buffer': 'BUFFER',
   'labels.ctkeyboard.buffer_hex': 'HEX',
-  'labels.ctkeyboard.buffer_car': 'CAR',
-  'labels.ctkeyboard.caps': 'Caps Lock',
-  'labels.ctkeyboard.address': 'Dir',
-  'labels.ctkeyboard.vector': 'Num. int',
-  'labels.ctkeyboard.priority': 'Pri',
-  'labels.ctkeyboard.int': 'Int',
+  'labels.ctkeyboard.buffer_char': 'CAR',
+  'labels.ctkeyboard.caps': 'Bloq. May.',
+  'labels.ctkeyboard.address': 'Dir.',
+  'labels.ctkeyboard.vector': 'Num. int.',
+  'labels.ctkeyboard.priority': 'Prio.',
+  'labels.ctkeyboard.int': 'Int.',
   'labels.ctkeyboard.state': 'Estado',
   'errors.ctkeyboard.keyboard_must': 'Es necesario crear el teclado previamente',
 
   // Lights device
-  'labels.ctlights.address': 'Dir',
-  'labels.ctlights.vector': 'Vec',
-  'labels.ctlights.priority': 'Pri',
-  'labels.ctlights.int': 'Int',
-  'labels.ctlights.genint': 'Gen Int',
+  'labels.ctlights.address': 'Dir.',
+  'labels.ctlights.vector': 'Vec.',
+  'labels.ctlights.priority': 'Prio.',
+  'labels.ctlights.int': 'Int.',
+  'labels.ctlights.genint': 'Gen. Int.',
   'labels.ctlights.group_lights': 'Luces/salida',
   'labels.ctlights.group_switches': 'Interruptores/entrada',
 
@@ -114,7 +114,7 @@ const es = {
   'labels.ctscreen.onoff': '',
 
   // Windows
-  'labels.window.close': 'Close',
+  'labels.window.close': 'Cerrar',
 
   // Signal selector
   'label.signalset.signal_selection_btok': 'Guardar señales',
@@ -167,12 +167,12 @@ const es = {
 
   'error.instructions.length_16': 'La instruccion ha de tener longitud 16 se admiten únicamente los caracteres 0 y 1',
   'error.instructions.badinstruction': 'No se ha localizado la instrucción {0}',
-  'error.instructions.duplicated': 'Se han encontrado varias coincidencias revise el código de las instrucciones porque no es posible la situación',
+  'error.instructions.duplicated': 'Se han encontrado varias coincidencias, revise el código de las instrucciones porque no es una situación posible',
   'error.instructions.structure': 'La instrucción no tiene una estructura válida',
 
   'error.forms.hex16': 'El valor ha de ser un número hexadecimal de 16 bits',
 
-  'errors.deviceform.input_device': 'Para un dispositivo de entrada es obligatoria la dirección base y en caso de tener interrupciones el número de interrupción y su prioridad',
+  'errors.deviceform.input_device': 'Para un dispositivo de entrada es obligatoria la dirección base y, en caso de usar interrupciones, el número de interrupción y su prioridad también lo son',
   'errors.deviceform.output_device': 'Para un dispositivo de salida es obligatoria la dirección base'
 
 }
