@@ -58,7 +58,7 @@ class RegisterValue extends CtElement {
       const mousebox = document.querySelector('#mousebox')
       mousebox.style.left = event.clientX + 10 + 'px'
       mousebox.style.top = event.clientY - 10 + 'px'
-      mousebox.innerHTML = 'BIN: ' + bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;') + '<br /> DEC: ' + bc.hex2dec(that.value.svg.textContent) + '<br /> DEC_2: ' + Bitop.two(bc.hex2dec(that.value.svg.textContent))
+      mousebox.innerHTML = 'BIN: ' + bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;') + '<br /> DEC: ' + bc.hex2dec(that.value.svg.textContent) + '<br /> DEC_C2: ' + Bitop.two(bc.hex2dec(that.value.svg.textContent))
     })
 
     this.registervalue.svg.addEventListener('mouseleave', (event) => {
