@@ -41,7 +41,7 @@ class Ir extends CtElement {
       .append(this.operationwrap)
       .append(this.operation)
 
-    this.value = new RegisterValue(group, ...gr.gridtoxy(5.8, 6), false)
+    this.value = new RegisterValue(group, ...gr.gridtoxy(5.8, 6), false, null, null, false)
 
     group.translate(x, y)
 

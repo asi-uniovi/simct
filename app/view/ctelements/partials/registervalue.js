@@ -37,10 +37,11 @@ class RegisterValue extends CtElement {
     dec_c2: 'labels.registervalue.dec_c2',
   }
 
-  constructor (container, x, y, editable = false, callable = null, checkEditable = null) {
+  constructor (container, x, y, editable = false, callable = null, checkEditable = null, showDec = true) {
     super()
 
     this.editable = editable
+    this.showDec = showDec
     this.id = ''
 
     this.registervalue = new SVGGroup('', this.id)
@@ -66,7 +67,10 @@ class RegisterValue extends CtElement {
       const mousebox = document.querySelector('#mousebox')
       mousebox.style.left = event.clientX + 10 + 'px'
       mousebox.style.top = event.clientY - 10 + 'px'
-      mousebox.innerHTML = _jStr(RegisterValue.labels.bin).translate() + bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;') + '<br />' + _jStr(RegisterValue.labels.dec).translate() + bc.hex2dec(that.value.svg.textContent) + '<br />' + _jStr(RegisterValue.labels.dec_c2).translate() + Bitop.two(bc.hex2dec(that.value.svg.textContent))
+      mousebox.innerHTML = _jStr(RegisterValue.labels.bin).translate() +  bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;')
+      if (this.showDec) {
+        mousebox.innerHTML += '<br />' + _jStr(RegisterValue.labels.dec).translate() + bc.hex2dec(that.value.svg.textContent) + '<br />' + _jStr(RegisterValue.labels.dec_c2).translate() + Bitop.two(bc.hex2dec(that.value.svg.textContent))
+      }
     })
 
     this.registervalue.svg.addEventListener('mouseleave', (event) => {

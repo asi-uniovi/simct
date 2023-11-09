@@ -4,6 +4,7 @@
  */
 
 import { Register } from './partials/register.js'
+import { RegisterValue } from './partials/registervalue.js'
 
 /**
  * @class PCRegister
@@ -17,6 +18,8 @@ class PCRegister extends Register {
     this.addAnchor('ib_pc', this.bbox.x, this.bbox.y + this.bbox.height * 0.7)
 
     this.lastMessageStep = 0
+
+    this.registerValue.showDec = false
   }
 
   listen (message) {
