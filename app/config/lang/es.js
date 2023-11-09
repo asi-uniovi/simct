@@ -72,7 +72,7 @@ const es = {
   'labels.simulator.internal_bus': 'Bus interno (IB)',
 
   // Register value
-  'labels.registervalue.bin': 'BIN borrame: ',
+  'labels.registervalue.bin': 'BIN: ',
   'labels.registervalue.dec': 'DEC: ',
   'labels.registervalue.dec_c2': 'DEC_C2: ',
 
