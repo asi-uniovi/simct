@@ -71,6 +71,11 @@ const es = {
   // Simulator
   'labels.simulator.internal_bus': 'Bus interno (IB)',
 
+  // Register value
+  'labels.registervalue.bin': 'BIN borrame: ',
+  'labels.registervalue.dec': 'DEC: ',
+  'labels.registervalue.dec_c2': 'DEC_C2: ',
+
   // View windows
   'labels.view.window_title_memedit': 'Editor de Memoria',
   'labels.view.window_title_memcfg': 'Configurar Memoria',

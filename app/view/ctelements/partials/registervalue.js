@@ -11,6 +11,7 @@ import { CtElement } from '../ctelement.js'
 import { SVGRect, SVGGroup, SVGTextHex } from '../../svg.js'
 import { Forms } from '../../../lib/forms.js'
 import { Bitop } from '../../../lib/bits.js'
+import { _jStr } from '../../../lib/jstr.js'
 
 /**
  * @class RegisterValue
@@ -29,6 +30,13 @@ import { Bitop } from '../../../lib/bits.js'
  * @property {Object} anchors Register anchors
  */
 class RegisterValue extends CtElement {
+
+  static labels = {
+    bin: 'labels.registervalue.bin',
+    dec: 'labels.registervalue.dec',
+    dec_c2: 'labels.registervalue.dec_c2',
+  }
+
   constructor (container, x, y, editable = false, callable = null, checkEditable = null) {
     super()
 
@@ -58,7 +66,7 @@ class RegisterValue extends CtElement {
       const mousebox = document.querySelector('#mousebox')
       mousebox.style.left = event.clientX + 10 + 'px'
       mousebox.style.top = event.clientY - 10 + 'px'
-      mousebox.innerHTML = 'BIN: ' + bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;') + '<br /> DEC: ' + bc.hex2dec(that.value.svg.textContent) + '<br /> DEC_C2: ' + Bitop.two(bc.hex2dec(that.value.svg.textContent))
+      mousebox.innerHTML = _jStr(RegisterValue.labels.bin).translate() + bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;') + '<br />' + _jStr(RegisterValue.labels.dec).translate() + bc.hex2dec(that.value.svg.textContent) + '<br />' + _jStr(RegisterValue.labels.dec_c2).translate() + Bitop.two(bc.hex2dec(that.value.svg.textContent))
     })
 
     this.registervalue.svg.addEventListener('mouseleave', (event) => {
