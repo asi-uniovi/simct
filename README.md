@@ -39,7 +39,15 @@ ejecutarlo localmente.
 
 El simulador está publicado como software libre con licencia MIT. Para
 desarrollar, se puede clonar este repositorio y utilizar cualquier editor.
-El código incluye tests para validar su funcionamiento.
+
+El código incluye tests para validar su funcionamiento. Para ejecutarlos,
+instalar [node.js](https://nodejs.org/) y ejecutar en el directorio raíz de
+este repositorio estas órdenes:
+
+```
+npm install
+npm test
+```
 
 Si se desean compartir los cambios que se hagan al código, se recomienda clonar
 este repositorio y hacer un pull request.
