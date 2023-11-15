@@ -7,6 +7,15 @@ jest.spyOn(global, 'setInterval')
 // Suma 2+3 ejemplos/suma2+3.eje
 const basicprogram1 = ['0100', '0101', '0110', '0014', '2102', '2900', '2203', '2A00', '4028']
 
+const basicprogramHex = [
+    '050A', // Origin
+    '050C', // Initial PC
+    '050F', // Initial R7,
+    '1A1A', // Dummy data in 050A
+    'C0FE', // Dummy data IN 050B
+    '2102', // MOVL R1, 02h
+]
+
 describe('Computer', function () {
   test('Test clock from Computer', async () => {
     const computer = new Computer()
@@ -122,5 +131,14 @@ describe('Computer', function () {
     expect(computer.cpu.pc.value).toBe(0x0101)
     expect(computer.cpu.reg[7].value).toBe(0x0110)
     expect(computer.mem.getPos(0x0100)).toBe(0x0014)
+  })
+
+  test('Test that we can load a program with hexadecimal values in the origin and PC', async () => {
+    const computer = new Computer()
+    computer.mem.addModule(0x0000, 32)
+    await computer.loadProgram(basicprogramHex)
+    expect(computer.cpu.pc.value).toBe(0x050C)
+    expect(computer.cpu.reg[7].value).toBe(0x050F)
+    expect(computer.mem.getPos(0x050C)).toBe(0x2102)
   })
 })

@@ -121,8 +121,8 @@ export class Computer {
       throw new Error(Computer.error.loading_program)
     } else {
       try {
-        this.mem.getPos(program[0])
-        this.mem.getPos(program[1])
+        this.mem.getPos(bC.hex2dec(program[0]))
+        this.mem.getPos(bC.hex2dec(program[1]))
       } catch (e) {
         throw new Error(Computer.error.loading_program)
       }
