@@ -224,7 +224,7 @@ class Memory extends ObservableObserver {
     // if (this.modules.filter((item) => { return (item[0] >= address && item[0] <= (address + size * 1024) - 1) || (address >= item[0] && address <= item[2]) }).length > 0) { throw new Error(Memory.error.module_collision) }
     if (!this.isAvailable(address, size * 1024)) {
       if (this.io) {
-        if (this.io.checkNoDevices(address, size)) throw new Error(Memory.error.io_module_present)
+        if (!this.io.checkNoDevices(address, size)) throw new Error(Memory.error.io_module_present)
       }
       throw new Error(Memory.error.module_collision)
     }
