@@ -142,7 +142,7 @@ const es = {
   'error.IOManager.io_vectors': 'Las 256 primeras posiciones de memoria se reservan para los vectores de interrupción',
   'error.IOManager.duplicate_name': 'Ya existe un dispositivo con el mismo nombre',
 
-  'error.memory.address_space': 'La dirección propuesta {0} se sale del rango de espacio direccionable {1}',
+  'error.memory.address_space': 'El módulo de memoria se sale del espacio de direcciones',
   'error.memory.module_size': 'Un módulo solo puede colocarse a partir de posición de memoria que sea múltiplo de su tamaño',
   'error.memory.module_notvalid': 'El tamaño del módulo propuesto es incrorecto',
   'error.memory.module_collision': 'Existe otro módulo en la posición de memoria propuesta',

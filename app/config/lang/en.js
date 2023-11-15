@@ -142,7 +142,7 @@ const en = {
   'error.IOManager.io_vectors': 'First 256 memory positions are reserved for the interrupt vector table',
   'error.IOManager.duplicate_name': 'A device with the same name already exists',
 
-  'error.memory.address_space': 'Given address {0} is out of directionable space {1}',
+  'error.memory.address_space': 'The memory module goes out of the address space',
   'error.memory.module_size': 'A memory module can only be placed in an address multiple of the module size',
   'error.memory.module_notvalid': 'Given module is not valid',
   'error.memory.module_collision': 'There is a memory module in the given address',
