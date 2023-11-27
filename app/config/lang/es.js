@@ -13,6 +13,12 @@ const es = {
 
   'labels.memcfg.header_left': '<p><strong>Configuración actual </strong><br /><span style="font-size: 10px;">(para eliminar un módulo click derecho)</span></p>',
   'labels.memcfg.header_right': '<p><strong>Módulos disponibles </strong><br /><span style="font-size: 10px;">(para colocar arrastrar y soltar en un posición válida)</span></p>',
+  
+  'labels.memedit.hex_addr': 'Dirección (hex)',
+  'labels.memedit.addr': 'Dirección',  
+  'labels.memedit.go': 'Ir',
+  'labels.memedit.load': 'Cargar',
+  'labels.memedit.value': 'Valor',
 
   // Menu
   'labels.menu.menu_file': 'Archivo',
@@ -26,14 +32,14 @@ const es = {
   'labels.menu.menu_running_instruction': '[F8] Instrucción completa',
   'labels.menu.menu_running_run': '[F9] Ejecutar',
   'labels.menu.menu_running_stop': '[F9] Detener',
-  'labels.menu.menu_running_signalselect': '[F6] Seleccionar Señales',
+  'labels.menu.menu_running_signalselect': '[F6] Seleccionar señales',
   'labels.menu.menu_running_mode_normal': '[F5] Cambiar modo',
   'labels.menu.menu_running_mode_manual': '[F5] Cambiar modo',
   'labels.menu.menu_running_reset': '[Ctrl+F10] Reiniciar',
   'labels.menu.menu_utils': 'Utilidades',
   'labels.menu.menu_utils_mem': 'Memoria',
   'labels.menu.menu_utils_mem_config': 'Configurar',
-  'labels.menu.menu_utils_mem_edit': 'Editor Hexadecimal',
+  'labels.menu.menu_utils_mem_edit': 'Editor hexadecimal',
   'labels.menu.menu_utils_io': 'E/S',
   'labels.menu.menu_utils_io_keyboard': 'Conectar Teclado',
   'labels.menu.menu_utils_io_screen': 'Conectar Pantalla',
@@ -56,7 +62,7 @@ const es = {
 
   // Context menu Memory management
   'labels.ctmemory.config': 'Configurar',
-  'labels.ctmemory.editor': 'Editor',
+  'labels.ctmemory.editor': 'Editor hexadecimal',
   'labels.ctmemory.controllabel': 'MEMORIA',
 
   // Uc
