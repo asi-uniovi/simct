@@ -56,7 +56,7 @@ const en = {
 
   // Context menu Memory management
   'labels.ctmemory.config': 'Configure',
-  'labels.ctmemory.editor': 'Editor',
+  'labels.ctmemory.editor': 'Hex editor',
   'labels.ctmemory.controllabel': 'MEMORY',
 
   // Uc
