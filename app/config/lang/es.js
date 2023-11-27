@@ -13,6 +13,12 @@ const es = {
 
   'labels.memcfg.header_left': '<p><strong>Configuración actual </strong><br /><span style="font-size: 10px;">(para eliminar un módulo click derecho)</span></p>',
   'labels.memcfg.header_right': '<p><strong>Módulos disponibles </strong><br /><span style="font-size: 10px;">(para colocar arrastrar y soltar en un posición válida)</span></p>',
+  
+  'labels.memedit.hex_addr': 'Dirección (hex)',
+  'labels.memedit.addr': 'Dirección',  
+  'labels.memedit.go': 'Ir',
+  'labels.memedit.load': 'Cargar',
+  'labels.memedit.value': 'Valor',
 
   // Menu
   'labels.menu.menu_file': 'Archivo',
