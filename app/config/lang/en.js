@@ -13,6 +13,12 @@ const en = {
 
   'labels.memcfg.header_left': '<p><strong>Current configuration </strong><br /><span style="font-size: 10px;">(Right click for module deletion)</span></p>',
   'labels.memcfg.header_right': '<p><strong>Available Modules </strong><br /><span style="font-size: 10px;">(Use drag and drop to add a module)</span></p>',
+  
+  'labels.memedit.hex_addr': 'Hex address',
+  'labels.memedit.addr': 'Address',  
+  'labels.memedit.go': 'Go',
+  'labels.memedit.load': 'Load',
+  'labels.memedit.value': 'Value',  
 
   // Menu
   'labels.menu.menu_file': 'File',
@@ -56,7 +62,7 @@ const en = {
 
   // Context menu Memory management
   'labels.ctmemory.config': 'Configure',
-  'labels.ctmemory.editor': 'Editor',
+  'labels.ctmemory.editor': 'Hex editor',
   'labels.ctmemory.controllabel': 'MEMORY',
 
   // Uc
