@@ -32,6 +32,14 @@ import { vwactions } from './navigation/viewactions.js'
  *
  */
 class Memoryedit extends Observer {
+  static labels = {    
+	hex_addr: 'labels.memedit.hex_addr',
+	addr: 'labels.memedit.addr',  
+	go: 'labels.memedit.go',
+	load: 'labels.memedit.load',
+	value: 'labels.memedit.value'
+  }
+	
   /**
    * @method init Initialize memory editor
    * @param {*} wrap Content wrapper
@@ -152,14 +160,13 @@ class Memoryedit extends Observer {
     const addrFinder = _jsc({ s: 'div', _id: 'addrfinder' })
 
     wrap.append(addrFinder)
+	
     const afInput = _jsc({ s: 'input', _id: 'position' })
-    afInput.attr({ placeholder: 'hex address', type: 'text' })
-    // afInput.placeholder = 'hex address'
+    afInput.attr({ placeholder: _jStr(Memoryedit.labels.hex_addr).translate(), type: 'text' })
     const afButton = _jsc({ s: 'button', _id: 'gotopos' })
-    afButton.text('Go')
-
+    afButton.text(_jStr(Memoryedit.labels.go).translate())
     const afButton2 = _jsc({ s: 'button', _id: 'loadpos' })
-    afButton2.text('Load')
+    afButton2.text(_jStr(Memoryedit.labels.load).translate())
 
     addrFinder.append(afInput)
     addrFinder.append(afButton)
@@ -173,8 +180,8 @@ class Memoryedit extends Observer {
     vtHeader.append(vtHeader1)
     vtHeader.append(vtHeader2)
 
-    vtHeader1.text('ADDR')
-    vtHeader2.text('VALUE')
+    vtHeader1.text(_jStr(Memoryedit.labels.addr).translate())
+	vtHeader2.text(_jStr(Memoryedit.labels.value).translate())
 
     const tmp = this.init(wrap, {
       itemHeight: 30,
