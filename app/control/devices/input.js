@@ -10,7 +10,7 @@ import { Device, withInt } from './device.js'
  * @abstract
  * @property {number} vector Interuption Vector of the device
  * @property {number} priority Priority of the device
- * @property {boolean} int Indicates if the device generates interruptions
+ * @property {boolean} int Indicates if the device generates interrupts
  * @property {number} readStep Indicates the current step of the read operation
  * @property {boolean} readMode Indicates if the device is in read mode
  *

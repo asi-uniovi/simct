@@ -13,7 +13,7 @@ import { Bitop } from '../lib/bits.js'
  *  -Carry flag ()
  *  -Overflow flag
  *  -Sign flag
- *  -Interruption flag
+ *  -Interrupt flag
  */
 
 /**
@@ -25,7 +25,7 @@ import { Bitop } from '../lib/bits.js'
  * -Carry flag ()
  * -Overflow flag
  * -Sign flag
- * -Interruption flag
+ * -Interrupt flag
  * @param { int } value - Register initial value
  *
  */
@@ -35,14 +35,14 @@ class RegisterSR extends Register {
   }
 
   /**
-   * Gets the value of the interruption flag
+   * Gets the value of the interrupt flag
    */
   get if () {
     return this.value & 0x1
   }
 
   /**
-   * Sets the value of the interruption flag
+   * Sets the value of the interrupt flag
    */
   set if (value) {
     this.value = Bitop.set(this.value, 0, value)

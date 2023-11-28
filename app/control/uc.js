@@ -19,7 +19,7 @@ import { _jStr } from '../lib/jstr.js'
  * @property {int} step - The current step of the control unit
  * @property {Register} upc - The current value of the uPC
  * @property {int} mode - The current mode of the control unit
- * @property {int} int - The current state of the interruption flag
+ * @property {int} int - The current state of the interrupt flag
  * @property {boolean} debugMode - The current state of the debug mode
  * @property {Array} signals - The current array of signals to execute
  * @property {SignalManager} signalmanager - The signal manager of the control unit
@@ -113,7 +113,7 @@ class Uc extends ObservableObserver {
   }
 
   /**
-   * Activates or deactivates the interruption flag
+   * Activates or deactivates the interrupt flag
    */
   set int (value) {
     this._int = value
@@ -121,7 +121,7 @@ class Uc extends ObservableObserver {
   }
 
   /**
-   * Gets the value of the interruption flag
+   * Gets the value of the interrupt flag
    */
   get int () {
     return this._int

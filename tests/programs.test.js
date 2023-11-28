@@ -25,8 +25,8 @@ describe('Basic', () => {
   })
 })
 
-describe('Interruptions', () => {
-  test('Test Interruptions with 3 devices', async () => {
+describe('Interrupts', () => {
+  test('Test Interrupts with 3 devices', async () => {
     const computer = new Computer()
     computer.mem.addModule(0x0000, 32)
 

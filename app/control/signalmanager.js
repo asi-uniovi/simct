@@ -385,14 +385,14 @@ class SignalManager extends ObservableObserver {
   }
 
   /**
-   * @method sig_cli Clears the interruption flag
+   * @method sig_cli Clears the interrupt flag
    */
   sig_cli () {
     this.cpu.sr.value = this.cpu.sr.value & 0b11110
   }
 
   /**
-   * @method sig_sti Sets the interruption flag
+   * @method sig_sti Sets the interrupt flag
    */
   sig_sti () {
     this.cpu.sr.value = this.cpu.sr.value | 0b00001

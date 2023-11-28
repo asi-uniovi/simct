@@ -89,7 +89,7 @@ test('test that trying to push a key to a full buffer fails', () => {
   }
 })
 
-test('Test that interruption vector is read ', () => {
+test('Test that interrupt vector is read ', () => {
   const keyboard = new Keyboard('keyboard 1', 0xF000, 0x0005, 1, true, fakeSdb, fakeCpu)
 
   keyboard.pushKey('a')
@@ -107,7 +107,7 @@ test('Clockpulse has no effect in read steps', () => {
   expect(keyboard.readStep).toBe(0)
 })
 
-test('Check if there is an interruption when a key is pressed', () => {
+test('Check if there is an interrupt when a key is pressed', () => {
   const keyboard = new Keyboard('keyboard 1', 0xF000, 0x0005, 1, true, fakeSdb, fakeCpu)
 
   keyboard.pushKey('a')
@@ -157,7 +157,7 @@ test('Testing the control register ', () => {
   expect(Bitop.isOn(keyboard.getPos(1), 8)).toBe(false)
 })
 
-test('Test no interruption effect when int flag false ', () => {
+test('Test no interrupt effect when int flag false ', () => {
   const keyboard = new Keyboard('keyboard 1', 0xF000, 0x0005, 1, false)
   keyboard.pushKey('a')
   keyboard.inta()

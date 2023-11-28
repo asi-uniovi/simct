@@ -32,10 +32,10 @@ class Umem {
     }
 
     // This address indicates the first position right after loading all the instructions from the library
-    // We use it to mark where do the signals to be executed to process an interruption start
+    // We use it to mark where do the signals to be executed to process an interrupt start
     this.intAddress = this.mem.length
 
-    // This block of signals is executed when an interruption is detected
+    // This block of signals is executed when an interrupt is detected
     this.mem = this.mem.concat([
       ['r7-ib', 'tmpe-set', 'add', 'alu-tmps'],
       ['sr-ib', 'ib-mdr'],

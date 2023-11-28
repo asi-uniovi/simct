@@ -37,7 +37,7 @@ describe('Micro programmed unit', function () {
     expect(uc.mode).toBe(Uc.mode.normal.instruction)
   })
 
-  test('Interruption management ', () => {
+  test('Interrupt management ', () => {
     // Covered by programs test
   })
 

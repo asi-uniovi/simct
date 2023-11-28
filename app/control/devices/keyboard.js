@@ -146,8 +146,8 @@ class Key {
  * @property {Array} registers Array that contains the registers of the keyboard
  * @property {number} baseaddress Base address of the keyboard
  * @property {number} priority Priority of the keyboard
- * @property {number} vector Interruption vector of the keyboard
- * @property {boolean} int Indicates if the keyboard generates interruptions
+ * @property {number} vector Interrupt vector of the keyboard
+ * @property {boolean} int Indicates if the keyboard generates interrupts
  */
 class Keyboard extends InputDevice {
   static error = {
@@ -271,7 +271,7 @@ class Keyboard extends InputDevice {
       this.buffer.enqueue({ value: this.caps ? inputkey.toUpperCase() : inputkey.toLowerCase(), code: key.code, scan: key.scan, hex: key.hex })
       this.ecregister = this.ecregister | 0x0100
 
-      // in case that Interruptions are enabled we have to report to the CPU de int signal
+      // in case that Interrupts are enabled we have to report to the CPU de int signal
       if (this.int) {
         this.cpu.setInt()
         this.activeInt = true
@@ -383,8 +383,8 @@ class Keyboard extends InputDevice {
   }
 
   /**
-   * @method isInt Checks if the keyboard is in interruption mode
-   * @returns {boolean} Returns true if the keyboard is in interruption mode, false otherwise
+   * @method isInt Checks if the keyboard is in interrupt mode
+   * @returns {boolean} Returns true if the keyboard is in interrupt mode, false otherwise
    */
   isInt () {
     return this.activeInt

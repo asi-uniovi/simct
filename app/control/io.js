@@ -70,9 +70,9 @@ class IOManager extends Observer {
   }
 
   /**
-   * @method getIntDevices Get devices with active Interruption
+   * @method getIntDevices Get devices with active Interrupt
    *
-   * @returns {Array} Array of devices with active interruption
+   * @returns {Array} Array of devices with active interrupt
    */
   getIntDevices () {
     const devicesInInt = this.devices.filter((item) => {
@@ -94,8 +94,8 @@ class IOManager extends Observer {
   }
 
   /**
- * @method getNextInt Get the next device with active interruption
- * @returns {Device} Device with active interruption with de highest priority
+ * @method getNextInt Get the next device with active interrupt
+ * @returns {Device} Device with active interrupt with de highest priority
  */
   getNextInt () {
     const devicesInInt = this.getIntDevices()
@@ -120,7 +120,7 @@ class IOManager extends Observer {
    * @param {Device} device Device to add
    * @throws {IOManager.error.duplicate_name} If there is a device with the same name
    * @throws {IOManager.error.memorylink_missing} if there is no link with the memory manager
-   * @throws {IOManager.error.io_vectors} If the address to map the device is below 256, space reserved for interruption vector table
+   * @throws {IOManager.error.io_vectors} If the address to map the device is below 256, space reserved for interrupt vector table
    * @throws {Memory.error.io_module_present} If the address to map the device has a memory module present
    */
   addDevice (device) {

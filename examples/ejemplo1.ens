@@ -1,8 +1,8 @@
 ; This program needs:
-;    - A Keyboard mapped in 0F000h with Vector Interruption routine mapped in 0005h 
-;    - A key pressed in the keyboard triggers an interruption and keys are read till the buffer is empty
+;    - A Keyboard mapped in 0F000h with Vector Interrupt routine mapped in 0005h 
+;    - A key pressed in the keyboard triggers an interrupt and keys are read till the buffer is empty
 ;    - A Screen mapped in 0F100h
-;    - A Lights device mapped in 0F200h with Vector Interruption routine mapped in 0006h 
+;    - A Lights device mapped in 0F200h with Vector Interrupt routine mapped in 0006h
 ;    - Switches 13,12,11,10,9,8 are readed every time a character is going to be printed:
 ;        - Switches 13,12,11 represent the 3 bits that state the background color of a character printed in the screen
 ;        - Switches 10,9,8 represent the 3 bits that state the color of a character printed in the screen (beware that at first black color fits the screen background so the character appears not to be there)
@@ -28,16 +28,16 @@ lights_vector VALOR 0006h
 main:
 movl r1, BYTEBAJO DIRECCION keyboard_vector
 movh r1, BYTEALTO DIRECCION keyboard_vector
-mov r1, [r1]; Now we have Keyboard interruption vector in r1
+mov r1, [r1]; Now we have Keyboard interrupt vector in r1
 movl r2, BYTEBAJO DIRECCION keyboard_routine
 movh r2, BYTEALTO DIRECCION keyboard_routine
-mov [r1], r2; We store in the Keyboard's Interruption vector address, the first memory position where the routine is stored
+mov [r1], r2; We store in the Keyboard's Interrupt vector address, the first memory position where the routine is stored
 movl r1, BYTEBAJO DIRECCION lights_vector
 movh r1, BYTEALTO DIRECCION lights_vector
-mov r1, [r1]; Now we have Lights device interruption vector in r1
+mov r1, [r1]; Now we have Lights device interrupt vector in r1
 movl r2, BYTEBAJO DIRECCION lights_routine
 movh r2, BYTEALTO DIRECCION lights_routine
-mov [r1], r2; We store in the Lights' Interruption vector address, the first memory position where the routine is stored
+mov [r1], r2; We store in the Lights' Interrupt vector address, the first memory position where the routine is stored
 sti
 jmp -1
 

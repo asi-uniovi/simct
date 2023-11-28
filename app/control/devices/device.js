@@ -9,7 +9,7 @@ import { ObservableObserver } from '../../lib/observer.js'
  */
 const withInt = {
   /**
-   * @property {boolean} activeInt Indicates if the device is in interruption mode
+   * @property {boolean} activeInt Indicates if the device is in interrupt mode
    */
   activeInt: false,
   /**
@@ -47,7 +47,7 @@ const withInt = {
   },
   /* istanbul ignore next */
   /**
-   * @method isInt Check if the device is in interruption mode
+   * @method isInt Check if the device is in interrupt mode
    */
   isInt () {
     throw new Error('Implement this!')

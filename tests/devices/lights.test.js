@@ -52,7 +52,7 @@ test('Test read/write and observer', () => {
   expect(lights.getPos(0)).toBe(0x8005)
 })
 
-test('Test that interruption vector is read ', () => {
+test('Test that interrupt vector is read ', () => {
   const lights = new Lights('Lights 1', 0xF000, 0x0008, 1, true, fakeSdb, fakeCpu)
 
   lights.setInt()

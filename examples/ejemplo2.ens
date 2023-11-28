@@ -1,7 +1,7 @@
 ; This program needs:
-;    - A Keyboard mapped in 0F000h with Vector Interruption routine mapped in 0005h 
+;    - A Keyboard mapped in 0F000h with Vector Interrupt routine mapped in 0005h
 ;    - A Screen mapped in 0F100h
-;    - A Lights device mapped in 0F200h with Vector Interruption routine mapped in 0006h 
+;    - A Lights device mapped in 0F200h with Vector Interrupt routine mapped in 0006h
 ORIGEN 1000h
 INICIO main
 .PILA 20h

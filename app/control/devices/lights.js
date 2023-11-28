@@ -12,9 +12,9 @@ import { InputDevice } from './input.js'
  * @property {number} switches Switches value
  * @property {number} _lights Internal lights value
  * @property {number} _switches Internal switches value
- * @property {number} vector Interruption vector
- * @property {number} priority Interruption priority
- * @property {boolean} int Indicates if the device generates interruptions
+ * @property {number} vector Interrupt vector
+ * @property {number} priority Interrupt priority
+ * @property {boolean} int Indicates if the device generates interrupts
  * @property {Object} error Error messages
  * @property {Object} topics Topics used by the device
  */
@@ -147,7 +147,7 @@ class Lights extends InputDevice {
   }
 
   /**
-   * @method setInt Set the interruption flag
+   * @method setInt Set the interrupt flag
    */
   setInt () {
     this.cpu.setInt()
@@ -155,8 +155,8 @@ class Lights extends InputDevice {
   }
 
   /**
-   * @method isInt Check if the device is in interruption mode
-   * @returns {boolean} true if the device is in interruption mode
+   * @method isInt Check if the device is in interrupt mode
+   * @returns {boolean} true if the device is in interrupt mode
    */
   isInt () {
     return this.activeInt
