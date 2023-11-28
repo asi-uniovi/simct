@@ -17,20 +17,48 @@ class SVGCable extends SVGBase {
 
   static getCable (label) { return _cables.filter(item => item.id === label)[0] }
 
+  /**
+   * Creates a new cable SVG element and adds it to the cables array.
+   *
+   * @param {SVGContainer} container - The SVG container to add the cable to.
+   * @param {string} [id=''] - Optional ID for the cable.
+   * @param {string} type - The type of cable (e.g. 'signal', 'int').
+   * @param {string[]} [activators] - Activator topics that will activate the cable.
+   * @returns {SVGCable} The newly created cable instance.
+   */
   static new (container, id = '', cabletype, activators = null) {
     _cables.push(new this(container, id, cabletype, activators))
     return _cables[_cables.length - 1]
   }
 
+  /**
+   * Listens for messages and activates or deactivates the cable accordingly.
+   *
+   * Checks the message topic and cable type to determine if the cable should
+   * be deactivated. Checks if the message topic matches any activator topics
+   * to determine if the cable should be activated.
+   *
+   * @param {Object} message - The message object containing the topic.
+   */
   listen (message) {
     if (message.topic === Uc.topic.update && this.cabletype !== 'int') this.DeActivate()
     if (this.cabletype === 'int' && message.topic === 'inta') this.DeActivate()
+
+    // Activate cable if message topic matches any activator topics
     if (this.activators.length > 0 && this.activators.find(element => {
       const regex = new RegExp(element)
       return regex.test(message.topic)
     })) this.Activate()
   }
 
+  /**
+   * Constructor for Cable SVG element
+   *
+   * @param {SVGContainer} container - SVG container to append cable to.
+   * @param {string} id - Optional ID for cable.
+   * @param {string} type - Type of cable (e.g. 'signal', 'int').
+   * @param {string[]} activators - Topics that activate cable on message.
+   */
   constructor (container, id = '', type = 'signal', activators) {
     super('polyline', '', id)
 
@@ -67,11 +95,18 @@ class SVGCable extends SVGBase {
   }
 
   /**
-     * Expects x,y point in px
-     * @param {*} x
-     * @param {*} y
-     * @returns
-     */
+   * Adds a new point to the points array.
+   * Checks if the new point matches the previous point on x or y before adding.
+   * Pushes the new x,y point to the array.
+   * Returns the Cable object for chaining.
+   * Expects x,y point in px.
+   *
+   * @param {number} x - The x coordinate of the new point in px
+   * @param {number} y - The y coordinate of the new point in px
+   * @param {string} [axis='x'] - The axis to match 'x' or 'y'
+   * @param {string} [label=''] - Optional label for the new point
+   * @returns {Cable} The Cable object
+   */
   addPoint (x, y, axis = 'x', label = '') {
     const pointArray = this.pointsArr; const npoints = pointArray.length
 
@@ -113,6 +148,15 @@ class SVGCable extends SVGBase {
     return this
   }
 
+  /**
+   * Sets the label text, position and offset for the cable line.
+   *
+   * @param {string} label - The label text
+   * @param {number} i - The point index to position the label at
+   * @param {string} HV - The horizontal and vertical alignment ('L'eft/'R'ight/'M'iddle, 'U'p/'D'own/'M'iddle)
+   * @param {number} oh - Horizontal offset
+   * @param {number} ov - Vertical offset
+   */
   setLabel (label, i = 0, HV = 'MM', oh = 0, ov = 0) {
     if (this.lineText === '' && label !== '') {
       this.lineText = new SVGText(0, 0, '', gr.gridSize)
@@ -145,11 +189,13 @@ class SVGCable extends SVGBase {
   }
 
   /**
-     * Expects x increment and y increment in the unit provided by the property currentUnit in the base class SVGElement
-     * @param {*} x
-     * @param {*} y
-     * @returns
-     */
+   * Adds a point to the end of the cable by offsetting the last point.
+   * Expects x increment and y increment in the unit provided by the property
+   * currentUnit in the base class SVGElement.
+   *
+   * @param {number} x - Horizontal offset to add to last point x coordinate
+   * @param {number} y - Vertical offset to add to last point y coordinate
+   */
   go (x, y) {
     const npoints = this.pointsArr.length
     const lastpoint = this.pointsArr[npoints - 1]
