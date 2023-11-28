@@ -49,6 +49,21 @@ npm install
 npm test
 ```
 
+Estas extensiones facilitan el desarrollo en Visual Studio Code:
+
+- [StandardJS](https://marketplace.visualstudio.com/items?itemName=standard.vscode-standard)
+  para aplicar el estilo Standard JS al formatear y validar el código
+  JavaScript.
+- [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
+  para ejecutar los tests directamente desde el editor.
+- [Jest
+  Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner)
+  para ejecutar tests individuales desde un menú contextual en la ventana de
+  edición.
+- [Live Server (5
+  server)](https://marketplace.visualstudio.com/items?itemName=yandeu.five-server)
+  para ejecutar el simulador en un servidor web local que se actualiza al editar
+  el código.
+
 Si se desean compartir los cambios que se hagan al código, se recomienda clonar
 este repositorio y hacer un pull request.
-
