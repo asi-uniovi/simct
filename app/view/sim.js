@@ -319,8 +319,8 @@ class Simulator {
     SVGCable.new(this.simpaths, 'sr_ib', 'signal', ['sr-ib']).addAnchor('sr_ib').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('SR-IB', 1, 'RU')
     SVGCable.new(this.simpaths, 'ib_sr', 'signal', ['ib-sr']).addAnchor('ib_sr').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('IB-SR', 1, 'RU')
     SVGCable.new(this.simpaths, 'alu_sr', 'signal', ['alu-sr']).addAnchor('alu_sr').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('ALU-SR', 1, 'RU')
-    SVGCable.new(this.simpaths, 'sti', 'signal', ['sti']).addAnchor('sti').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('CLI', 1, 'RU')
-    SVGCable.new(this.simpaths, 'cli', 'signal', ['cli']).addAnchor('cli').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('STI', 1, 'RU')
+    SVGCable.new(this.simpaths, 'sti', 'signal', ['sti']).addAnchor('sti').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('STI', 1, 'RU')
+    SVGCable.new(this.simpaths, 'cli', 'signal', ['cli']).addAnchor('cli').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('CLI', 1, 'RU')
     SVGCable.new(this.simpaths, 'alu_sr_in', 'signal', ['alu-sr']).addAnchor('alu_sr_out').addAnchor('alu_sr_in').addArrow('U', 2)
 
     SVGCable.new(this.simpaths, 'bus_sr_ib', 'bus', ['ib-sr', 'sr-ib']).addAnchor('sr_bus_ib').addPoint(anchors.getAnchor('ibbus_R0')[0] - gr.gridSize * 3, anchors.getAnchor('sr_bus_ib')[1]).addArrow('L', 0).addArrow('R', 1)
