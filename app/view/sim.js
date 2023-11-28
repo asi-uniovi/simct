@@ -294,7 +294,7 @@ class Simulator {
       .addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1] + gr.gridTopx(2))
       .addPoint(anchors.getAnchor('mem_rightside')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1] + gr.gridTopx(2)).addArrow('U', 0).addArrow('L', 2)
 
-    SVGCable.new(this.simpaths, 'bus_sdb_es', 'bus', ['mdr-ib'])
+    SVGCable.new(this.simpaths, 'bus_sdb_es', 'bus', ['write', 'mdr-ib'])
       .addAnchor('sdb_io_bus')
       .addPoint(anchors.getAnchor('io_leftside')[0], anchors.getAnchor('sdb_io_bus')[1] + gr.gridTopx(2), 'y').addArrow('U', 0).addArrow('R', 2)
 
@@ -303,7 +303,7 @@ class Simulator {
       .addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sab_orig_bottom')[1] + gr.gridTopx(2))
       .addPoint(anchors.getAnchor('mem_rightside')[0], anchors.getAnchor('bus_sab_orig_bottom')[1] + gr.gridTopx(2)).addArrow('L', 2)
 
-    SVGCable.new(this.simpaths, 'bus_sab_es', 'bus')
+    SVGCable.new(this.simpaths, 'bus_sab_es', 'bus', ['read', 'write'])
       .addAnchor('sab_io_bus')
       .addPoint(anchors.getAnchor('io_leftside')[0], anchors.getAnchor('sab_io_bus')[1] + gr.gridTopx(2), 'y').addArrow('R', 2)
 
