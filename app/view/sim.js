@@ -334,10 +334,10 @@ class Simulator {
     SVGCable.new(this.simpaths, 'scb_mem_write', 'signal', [SignalManager.topic.mem_write]).addAnchor('memory_write_read').addAnchorY('mem_write_in').addAnchor('mem_write_in').setLabel('WRITE', 2, 'RU', gr.gridTopx(0.5)).addArrow('L', 2)
     SVGCable.new(this.simpaths, 'scb_mem_read', 'signal', [SignalManager.topic.mem_read]).addAnchor('memory_write_read').addAnchorY('mem_read_in').addAnchor('mem_read_in').setLabel('READ', 2, 'RU', gr.gridTopx(0.5)).addArrow('L', 2)
 
-    SVGCable.new(this.simpaths, 'scb_io_write').addAnchor('io_write_read').addAnchorY('io_write_in').addAnchor('io_write_in').setLabel('WRITE', 2, 'LU').addArrow('R', 2)
+    SVGCable.new(this.simpaths, 'scb_io_write', 'signal', [SignalManager.topic.mem_write]).addAnchor('io_write_read').addAnchorY('io_write_in').addAnchor('io_write_in').setLabel('WRITE', 2, 'LU').addArrow('R', 2)
 
     SVGCable.new(this.simpaths, 'ib_pc', 'signal', ['ib-pc']).addAnchor('ib_pc').goLeft(gr.gridTopx(6)).setLabel('IB-PC', 1, 'RU').addArrow('R', 0)
-    SVGCable.new(this.simpaths, 'scb_io_read', 'signal').addAnchor('io_write_read').addAnchorY('io_read_in').addAnchor('io_read_in').setLabel('READ', 2, 'LU').addArrow('R', 2)
+    SVGCable.new(this.simpaths, 'scb_io_read', 'signal', [SignalManager.topic.mem_read]).addAnchor('io_write_read').addAnchorY('io_read_in').addAnchor('io_read_in').setLabel('READ', 2, 'LU').addArrow('R', 2)
 
     SVGCable.new(this.simpaths, 'scb_io_inta', 'signal', ['inta']).addAnchor('io_inta').addAnchor('io_inta_in').setLabel('INTA', 1, 'LU').addArrow('R', 1)
     SVGCable.new(this.simpaths, 'scb_io_int', 'int', ['int-uc']).addAnchor('io_int').addAnchor('io_int_in').setLabel('INT', 1, 'LU').addArrow('L', 0)
