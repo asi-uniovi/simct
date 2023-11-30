@@ -100,7 +100,9 @@ class ViewActions extends Observable {
       document.querySelector('#wmng').append(w.dom.element)
       signalmng.onSave(function () {
         ct.cpu.uc.loadSignals(sim.control.selectedSignals)
-        wm.remove(w)
+        // Do not close the signal selector on sending the signals to the control unit.
+        // The user must click X to close. Uncomment next line to change this behavior.
+		    // wm.remove(w)
       })
     }
   }
