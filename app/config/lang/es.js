@@ -159,7 +159,7 @@ const es = {
 
   'error.memory.notsupported': 'El modo indicado no está soportado por el módulo de memoria',
 
-  'error.signalset.multiple_download': 'No se puede seleccionar mas de una instrucción de descarga a la vez',
+  'error.signalset.multiple_download': 'No es posible activar mas de una señal de descarga a la vez',
   'error.signalset.same_group': ' Las señales seleccionadas del grupo {0} no son compatibles',
   'error.signalset.read_ongoing': 'Existe una operación de lectura en curso y la selección de señales no es posible',
   'error.signalset.write_ongoing': 'Existe una operación de escritura en curso y la selección de señales no es posible',
