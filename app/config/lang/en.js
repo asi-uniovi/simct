@@ -128,7 +128,7 @@ const en = {
   'labels.window.close': 'Close',
 
   // Signal selector
-  'label.signalset.signal_selection_btok': 'Save signals',
+  'label.signalset.signal_selection_btok': 'Send to CU',
   'label.signalset.signal_selection_deactivate': 'Deactivate all',
   'label.signalset.signal_selection': 'Signal selection',
 
