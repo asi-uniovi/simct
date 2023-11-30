@@ -39,7 +39,7 @@ const es = {
   'labels.menu.menu_utils': 'Utilidades',
   'labels.menu.menu_utils_mem': 'Memoria',
   'labels.menu.menu_utils_mem_config': 'Configurar',
-  'labels.menu.menu_utils_mem_edit': 'Editor hexadecimal',
+  'labels.menu.menu_utils_mem_edit': 'Editar',
   'labels.menu.menu_utils_io': 'E/S',
   'labels.menu.menu_utils_io_keyboard': 'Conectar Teclado',
   'labels.menu.menu_utils_io_screen': 'Conectar Pantalla',
@@ -62,7 +62,7 @@ const es = {
 
   // Context menu Memory management
   'labels.ctmemory.config': 'Configurar',
-  'labels.ctmemory.editor': 'Editor hexadecimal',
+  'labels.ctmemory.editor': 'Editar',
   'labels.ctmemory.controllabel': 'MEMORIA',
 
   // Uc
