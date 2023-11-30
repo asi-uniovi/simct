@@ -20,7 +20,8 @@ import { LangMenu } from './menu/menu.js'
 class SystemConfigurator {
   static labels = {
     btok: 'label.sysconf.btok',
-    window_title: 'label.sysconf.window_title'
+    window_title: 'label.sysconf.window_title',
+    message: 'labels.sysconf.language'
   }
 
   constructor (CT, sim) {
@@ -34,7 +35,7 @@ class SystemConfigurator {
 
     const lang = LangMenu(sim)
     const langlabel = _jsc({ s: 'label', _class: 'lang-label' })
-    langlabel.text('Configuración de idioma: ')
+    langlabel.text(_jStr(SystemConfigurator.labels.btok).translate())
 
     // lang.removeClass('lang-menu')
     wrap.append(langlabel)
