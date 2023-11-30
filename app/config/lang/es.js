@@ -128,7 +128,7 @@ const es = {
   'labels.window.close': 'Cerrar',
 
   // Signal selector
-  'label.signalset.signal_selection_btok': 'Guardar señales',
+  'label.signalset.signal_selection_btok': 'Enviar a UC',
   'label.signalset.signal_selection_deactivate': 'Desactivar todas',
   'label.signalset.signal_selection': 'Selección de señales',
 
