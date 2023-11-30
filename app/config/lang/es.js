@@ -23,7 +23,7 @@ const es = {
   // Menu
   'labels.menu.menu_file': 'Archivo',
   'labels.menu.menu_file_open': 'Abrir ejecutable...',
-  'labels.menu.system_config': 'Configuración del sistema',
+  'labels.menu.system_config': 'Configuración',
   'labels.menu.menu_file_opensim': 'Abrir simulación...',
   'labels.menu.menu_file_savesim': 'Guardar simulación...',
   'labels.menu.menu_offline_version': 'Descargar versión offline',
@@ -83,8 +83,8 @@ const es = {
   'labels.registervalue.dec_c2': 'DEC_C2: ',
 
   // View windows
-  'labels.view.window_title_memedit': 'Editor de Memoria',
-  'labels.view.window_title_memcfg': 'Configurar Memoria',
+  'labels.view.window_title_memedit': 'Editor de memoria',
+  'labels.view.window_title_memcfg': 'Configurar memoria',
   'labels.view.window_title_keyboard_data': 'Datos Teclado',
   'labels.view.window_title_screen_data': 'Datos Pantalla',
   'labels.view.window_title_lights_data': 'Datos Luces',
