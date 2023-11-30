@@ -95,7 +95,7 @@ const en = {
   // Device data forms
   'labels.deviceform.form_name': 'Name',
   'labels.deviceform.form_address': 'Base addr.',
-  'labels.deviceform.form_vector': 'Int. number',
+  'labels.deviceform.form_vector': 'Int. number (0-255)',
   'labels.deviceform.form_priority': 'Priority. (0-255)',
   'labels.deviceform.form_int': 'Generares int.',
 
