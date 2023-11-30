@@ -23,7 +23,7 @@ const en = {
   // Menu
   'labels.menu.menu_file': 'File',
   'labels.menu.menu_file_open': 'Open eje file...',
-  'labels.menu.system_config': 'System configuration',
+  'labels.menu.system_config': 'Settings',
   'labels.menu.menu_file_opensim': 'Open sim file...',
   'labels.menu.menu_file_savesim': 'Save sim file...',
   'labels.menu.menu_offline_version': 'Download offline version',
@@ -39,7 +39,7 @@ const en = {
   'labels.menu.menu_utils': 'Utils',
   'labels.menu.menu_utils_mem': 'Memory',
   'labels.menu.menu_utils_mem_config': 'Configure',
-  'labels.menu.menu_utils_mem_edit': 'Hex editor',
+  'labels.menu.menu_utils_mem_edit': 'Edit',
   'labels.menu.menu_utils_io': 'I/O',
   'labels.menu.menu_utils_io_keyboard': 'Connect Keyboard',
   'labels.menu.menu_utils_io_screen': 'Connect Screen',
@@ -52,7 +52,7 @@ const en = {
   'labels.simulator.language_en': 'EN',
 
   // Context menu memconfig
-  'labels.memcfg.delete_module': 'Remove Module',
+  'labels.memcfg.delete_module': 'Remove module',
 
   // Context menu I/O management
   'labels.ctio.connect_keyboard': 'Connect Keyboard',
@@ -62,7 +62,7 @@ const en = {
 
   // Context menu Memory management
   'labels.ctmemory.config': 'Configure',
-  'labels.ctmemory.editor': 'Hex editor',
+  'labels.ctmemory.editor': 'Edit',
   'labels.ctmemory.controllabel': 'MEMORY',
 
   // Uc
@@ -83,19 +83,19 @@ const en = {
   'labels.registervalue.dec_c2': 'DEC_2C: ',
 
   // View windows
-  'labels.view.window_title_memedit': 'Memory Editor',
-  'labels.view.window_title_memcfg': 'Memory Configuration',
+  'labels.view.window_title_memedit': 'Memory editor',
+  'labels.view.window_title_memcfg': 'Memory configuration',
   'labels.view.window_title_keyboard_data': 'Keyboard info',
   'labels.view.window_title_screen_data': 'Screen info',
   'labels.view.window_title_lights_data': 'Lights info',
   'labels.view.window_title_savesim': 'Save simulation',
-  'labels.view.window_title_savesim_label': 'File Name: ',
+  'labels.view.window_title_savesim_label': 'File name: ',
   'labels.view.window_title_savesim_button': 'Save',
 
   // Device data forms
   'labels.deviceform.form_name': 'Name',
-  'labels.deviceform.form_address': 'Base Addr.',
-  'labels.deviceform.form_vector': 'Int. Number',
+  'labels.deviceform.form_address': 'Base addr.',
+  'labels.deviceform.form_vector': 'Int. number',
   'labels.deviceform.form_priority': 'Priority. (0-255)',
   'labels.deviceform.form_int': 'Generares int.',
 
@@ -103,7 +103,7 @@ const en = {
   'labels.ctkeyboard.buffer': 'BUFFER',
   'labels.ctkeyboard.buffer_hex': 'HEX',
   'labels.ctkeyboard.buffer_char': 'CHAR',
-  'labels.ctkeyboard.caps': 'Caps Lock',
+  'labels.ctkeyboard.caps': 'Caps lock',
   'labels.ctkeyboard.address': 'Addr.',
   'labels.ctkeyboard.vector': 'Vec.',
   'labels.ctkeyboard.priority': 'Prio.',
@@ -116,7 +116,7 @@ const en = {
   'labels.ctlights.vector': 'Vec.',
   'labels.ctlights.priority': 'Prio.',
   'labels.ctlights.int': 'Int.',
-  'labels.ctlights.genint': 'Gen. Int.',
+  'labels.ctlights.genint': 'Gen. int.',
   'labels.ctlights.group_lights': 'Lights/output',
   'labels.ctlights.group_switches': 'Switches/input',
 
