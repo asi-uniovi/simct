@@ -135,6 +135,7 @@ const es = {
   // System configuration
   'label.sysconf.btok': 'Guardar',
   'label.sysconf.window_title': 'Configuración',
+  'labels.sysconf.language': 'Idioma: ',
 
   // Confirms
   'confirm.devices.remove_device': '¿Está seguro de que desea eliminar el dispositivo: {0}?',
