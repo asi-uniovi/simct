@@ -135,6 +135,7 @@ const en = {
   // System configuration
   'label.sysconf.btok': 'Save',
   'label.sysconf.window_title': 'Settings',
+  'labels.sysconf.language': 'Language: ',
 
   // Confirms
   'confirm.devices.remove_device': 'Are you sure you want to close the device: {0}?',
