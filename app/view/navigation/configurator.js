@@ -35,7 +35,7 @@ class SystemConfigurator {
 
     const lang = LangMenu(sim)
     const langlabel = _jsc({ s: 'label', _class: 'lang-label' })
-    langlabel.text(_jStr(SystemConfigurator.labels.btok).translate())
+    langlabel.text(_jStr(SystemConfigurator.labels.message).translate())
 
     // lang.removeClass('lang-menu')
     wrap.append(langlabel)
