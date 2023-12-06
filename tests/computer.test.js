@@ -8,12 +8,12 @@ jest.spyOn(global, 'setInterval')
 const basicprogram1 = ['0100', '0101', '0110', '0014', '2102', '2900', '2203', '2A00', '4028']
 
 const basicprogramHex = [
-    '050A', // Origin
-    '050C', // Initial PC
-    '050F', // Initial R7,
-    '1A1A', // Dummy data in 050A
-    'C0FE', // Dummy data IN 050B
-    '2102', // MOVL R1, 02h
+  '050A', // Origin
+  '050C', // Initial PC
+  '050F', // Initial R7,
+  '1A1A', // Dummy data in 050A
+  'C0FE', // Dummy data IN 050B
+  '2102' // MOVL R1, 02h
 ]
 
 describe('Computer', function () {

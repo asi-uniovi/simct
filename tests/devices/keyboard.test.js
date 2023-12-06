@@ -1,4 +1,3 @@
-
 import { beforeEach } from '@jest/globals'
 import { Keyboard } from '../../app/control/devices/keyboard.js'
 import { Bitop } from '../../app/lib/bits.js'

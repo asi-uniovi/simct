@@ -30,11 +30,10 @@ import { _jStr } from '../../../lib/jstr.js'
  * @property {Object} anchors Register anchors
  */
 class RegisterValue extends CtElement {
-
   static labels = {
     bin: 'labels.registervalue.bin',
     dec: 'labels.registervalue.dec',
-    dec_c2: 'labels.registervalue.dec_c2',
+    dec_c2: 'labels.registervalue.dec_c2'
   }
 
   constructor (container, x, y, editable = false, callable = null, checkEditable = null, showDec = true) {
@@ -67,7 +66,7 @@ class RegisterValue extends CtElement {
       const mousebox = document.querySelector('#mousebox')
       mousebox.style.left = event.clientX + 10 + 'px'
       mousebox.style.top = event.clientY - 10 + 'px'
-      mousebox.innerHTML = _jStr(RegisterValue.labels.bin).translate() +  bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;')
+      mousebox.innerHTML = _jStr(RegisterValue.labels.bin).translate() + bc.hex2bin(that.value.svg.textContent).replace(/([\S\s]{4})/g, '$1&nbsp;')
       if (this.showDec) {
         mousebox.innerHTML += '<br />' + _jStr(RegisterValue.labels.dec).translate() + bc.hex2dec(that.value.svg.textContent) + '<br />' + _jStr(RegisterValue.labels.dec_c2).translate() + Bitop.two(bc.hex2dec(that.value.svg.textContent))
       }

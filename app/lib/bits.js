@@ -1,4 +1,3 @@
-
 class Bitop {
   static isOn (value, bit) {
     return (((value >> bit) % 2) !== 0)
