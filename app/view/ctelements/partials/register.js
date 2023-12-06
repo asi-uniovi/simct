@@ -9,6 +9,7 @@ import { CtElement } from '../ctelement.js'
 import { SVGText, SVGRect, SVGGroup } from '../../svg.js'
 import { RegisterValue } from './registervalue.js'
 import { Register as RegisterControl } from '../../../control/register.js'
+import { SignalManager } from '../../../control/signalmanager.js'
 
 /**
  * @class Register
@@ -99,6 +100,9 @@ class Register extends CtElement {
     switch (message.topic) {
       case this.id + '_' + RegisterControl.topic.reset:
         this.updateValue(message.value)
+        this.deactivate()
+        break
+      case SignalManager.topic.empty:
         this.deactivate()
         break
       case this.id + '_' + RegisterControl.topic.updated:

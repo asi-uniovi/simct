@@ -52,7 +52,8 @@ class Memory extends ObservableObserver {
     reset: 'topic.memory.reset',
     module_add: 'topic.memory.module_add',
     module_rm: 'topic.memory.module_rm',
-    edited_mem_pos: 'topic.memory.edited_mem_pos'
+    edited_mem_pos: 'topic.memory.edited_mem_pos',
+    mem_sdb: 'topic.memory.mem_sdb'
   }
 
   static rmode = {
@@ -323,6 +324,7 @@ class Memory extends ObservableObserver {
     const data = this.getPos(address)
     this.sdb.value = data
     this.readMode = Memory.rmode.off
+    this.broadCast({ topic: Memory.topic.mem_sdb })
   }
 
   /**

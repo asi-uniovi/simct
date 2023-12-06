@@ -18,6 +18,7 @@ import { _jsc } from '../lib/jsnc.js'
 
 import { localStorageEx } from '../lib/localstorage.js'
 import { SignalManager } from '../control/signalmanager.js'
+import { Memory } from '../control/memory.js'
 import { Computer } from '../control/computer.js'
 import { State } from '../config/control.js'
 import { getCookie } from '../lib/cookies.js'
@@ -84,9 +85,9 @@ class Simulator {
         switch (d.type) {
           case 'screen': vwactions.screenVW(_this.ct, _this.wm, { name: d.name, basedir: d.address })
             break
-          case 'keyboard': vwactions.keyboardVW(_this.ct, _this.wm, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
+          case 'keyboard': vwactions.keyboardVW(_this.ct, _this.wm, _this.bus_sdb, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
             break
-          case 'lights': vwactions.lightsVW(_this.ct, _this.wm, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
+          case 'lights': vwactions.lightsVW(_this.ct, _this.wm, _this.bus_sdb, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
             break
         }
       })
@@ -153,6 +154,13 @@ class Simulator {
     this.ct.cpu.uc.signalmanager.unsubscribe(this.pc)
     this.ct.cpu.uc.signalmanager.unsubscribe(this.bus_sab)
     this.ct.cpu.uc.signalmanager.unsubscribe(this.bus_sdb)
+
+    this.ct.mem.unsubscribe(this.busMdrSdb)
+    this.ct.mem.unsubscribe(this.busSdbMem)
+    this.ct.mem.unsubscribe(this.busSdbIO)
+
+    this.ct.mem.unsubscribe(this.bus_sdb)
+    this.ct.mem.unsubscribe(this.mdr)
 
     const cables = SVGCable.cables
     for (let i = 0; i < cables.length; i++) {
@@ -228,6 +236,9 @@ class Simulator {
     this.ct.cpu.uc.signalmanager.subscribe(this.bus_sab)
     this.ct.cpu.uc.signalmanager.subscribe(this.bus_sdb)
 
+    this.ct.mem.subscribe(this.bus_sdb)
+    this.ct.mem.subscribe(this.mdr)
+
     // Cables
     this.simpaths = new SVGGroup('', 'simpaths')
     this.sim.svg.append(this.simpaths.svg)
@@ -289,16 +300,19 @@ class Simulator {
     SVGCable.new(this.simpaths, 'uc_mdr_ib', 'signal', ['mdr-ib']).addAnchor('mdr_ib').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('MDR-IB', 0, 'LU', gr.gridTopx(1)).addArrow('R', 0)
     SVGCable.new(this.simpaths, 'uc_ib_mdr', 'signal', ['ib-mdr']).addAnchor('ib_mdr').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('IB-MDR', 0, 'LU', gr.gridTopx(1)).addArrow('R', 0)
     SVGCable.new(this.simpaths, 'bus_mdr_ib', 'bus', ['mdr-ib', 'ib-mdr']).addAnchor('mdr_ib_bus').addPoint(anchors.getAnchor('mdr_ib_bus')[0], anchors.getAnchor('tmpe_ib_bus_ib')[1]).addArrow('D', 0).addArrow('U', 1)
-    SVGCable.new(this.simpaths, 'bus_mdr_sdb', 'bus', ['mdr-ib', 'ib-mdr']).addAnchor('mdr_sdb').addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig')[1]).addArrow('U', 0).addArrow('D', 1)
+    this.busMdrSdb = SVGCable.new(this.simpaths, 'bus_mdr_sdb', 'bus', ['ib-mdr', Memory.topic.mem_sdb]).addAnchor('mdr_sdb').addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig')[1]).addArrow('U', 0).addArrow('D', 1)
+    this.ct.mem.subscribe(this.busMdrSdb)
 
-    SVGCable.new(this.simpaths, 'bus_sdb_mem', 'bus', ['write', 'mdr-ib'])
+    this.busSdbMem = SVGCable.new(this.simpaths, 'bus_sdb_mem', 'bus', ['ib-mdr', Memory.topic.mem_sdb])
       .addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1])
       .addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1] + gr.gridTopx(2))
       .addPoint(anchors.getAnchor('mem_rightside')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1] + gr.gridTopx(2)).addArrow('U', 0).addArrow('L', 2)
+    this.ct.mem.subscribe(this.busSdbMem)
 
-    SVGCable.new(this.simpaths, 'bus_sdb_es', 'bus', ['write', 'mdr-ib'])
+    this.busSdbIo = SVGCable.new(this.simpaths, 'bus_sdb_es', 'bus', ['write', Memory.topic.mem_sdb])
       .addAnchor('sdb_io_bus')
       .addPoint(anchors.getAnchor('io_leftside')[0], anchors.getAnchor('sdb_io_bus')[1] + gr.gridTopx(2), 'y').addArrow('U', 0).addArrow('R', 2)
+    this.ct.mem.subscribe(this.busSdbIo)
 
     SVGCable.new(this.simpaths, 'bus_sab_mem', 'bus', ['read', 'write'])
       .addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sab_orig_bottom')[1])
@@ -374,8 +388,8 @@ class Simulator {
     this.memory.memoryEditor(function () { vwactions.memoryEditor(_this.ct, _this.wm) })
 
     this.io.addScreen(function () { vwactions.addScreen(_this.ct, _this.wm) })
-    this.io.addKeyboard(function () { vwactions.addKeyboard(_this.ct, _this.wm) })
-    this.io.addLights(function () { vwactions.addLights(_this.ct, _this.wm) })
+    this.io.addKeyboard(function () { vwactions.addKeyboard(_this.ct, _this.wm, _this.bus_sdb) })
+    this.io.addLights(function () { vwactions.addLights(_this.ct, _this.wm, _this.bus_sdb) })
 
     this.ct.reset()
   }

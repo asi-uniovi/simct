@@ -7,7 +7,7 @@ describe('Test queue', function () {
     try {
       obs.listen('topic')
     } catch (e) {
-      expect(e.message).toBe('Implement this!')
+      expect(e.message).toBe('Implement listen() in Observer')
     }
   })
 })

@@ -6,6 +6,7 @@
 
 import { Register } from './partials/register.js'
 import { Register as RegisterControl } from '../../control/register.js'
+import { Memory } from '../../control/memory.js'
 
 /**
  * @class MDRRegister
@@ -40,6 +41,10 @@ class MDRRegister extends Register {
         this.deactivate()
         break
       case 'ib-mdr':
+        this.activate()
+        if (message.value && message.value.step) this.lastMessageStep = message.value.step
+        break
+      case Memory.topic.mem_sdb:
         this.activate()
         if (message.value && message.value.step) this.lastMessageStep = message.value.step
         break

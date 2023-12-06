@@ -22,7 +22,7 @@ const withInt = {
     }
   },
   /**
-   * @method inta When the CPU sends an INTA signal, the device checks if it has to acknoledge it
+   * @method inta When the CPU sends an INTA signal, the device checks if it has to acknowledge it
    */
   inta () {
     if (this.int) {
@@ -44,6 +44,7 @@ const withInt = {
     this.sdb.value = this.vector
     this.resetReadMode()
     this.cpu.unSetInt()
+    this.broadCast({ topic: Device.topic.dev_sdb })
   },
   /* istanbul ignore next */
   /**
@@ -65,6 +66,10 @@ const withInt = {
  * @property {number} cpu CPU link
  */
 class Device extends ObservableObserver {
+  static topic = {
+    dev_sdb: 'dev-sdb'
+  }
+
   constructor (name, baseaddress, mempositions, sdb, cpu) {
     super()
     this.sdb = sdb

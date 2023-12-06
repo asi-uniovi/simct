@@ -23,6 +23,7 @@ import { Forms } from '../../lib/forms.js'
 import { _jsc } from '../../lib/jsnc.js'
 import { SystemConfigurator } from './configurator.js'
 import { localStorageEx } from '../../lib/localstorage.js'
+import { BusSDB } from '../ct.js'
 
 /**
  * @method download
@@ -323,12 +324,14 @@ class ViewActions extends Observable {
    * @method keyboardVW Creates a keyboard view
    * @param {Computer} ct Computer link
    * @param {WindowManager} wm WindowManager link
+   * @param {BusSDB} busSdb BusSDB link
    * @param {*} form Form data
    * @returns {Keyboard} Keyboard
    */
-  keyboardVW (ct, wm, form) {
+  keyboardVW (ct, wm, busSdb, form) {
     const DeviceControl = new Keyboard(form.name, form.basedir, form.vector * 1, form.priority * 1, form.int, ct.sdb, ct.cpu)
     ct.io.addDevice(DeviceControl)
+    DeviceControl.subscribe(busSdb)
 
     const DeviceView = new CTKeyboard(DeviceControl)
     const w = wm.window(form.name, false)
@@ -346,15 +349,16 @@ class ViewActions extends Observable {
    * @method addKeyboard Creates a keyboard
    * @param {Computer} ct Computer link
    * @param {WindowManager} wm WIndowManager link
+   * @param {BusSDB} busSdb BusSDB link
    * @returns {Keyboard} Keyboard
    */
-  addKeyboard (ct, wm) {
+  addKeyboard (ct, wm, busSdb) {
     const _this = this
     const wf = wm.window(_jStr(ViewActions.labels.window_title_keyboard_data).translate(), false)
     const DeviceForm = new InputDeviceForm(function (form) {
       try {
         localStorageEx.remove('w' + form.name)
-        _this.keyboardVW(ct, wm, { name: form.name, basedir: bc.hex2dec(form.basedir), vector: form.vector * 1, priority: form.priority * 1, int: form.int })
+        _this.keyboardVW(ct, wm, busSdb, { name: form.name, basedir: bc.hex2dec(form.basedir), vector: form.vector * 1, priority: form.priority * 1, int: form.int })
         wm.remove(wf)
       } catch (e) {
         alert(_jStr(e.message).translate())
@@ -367,14 +371,16 @@ class ViewActions extends Observable {
 
   /**
    * @method lightsVW Creates a lights view
-   * @param {Computer} ct COmputer link
+   * @param {Computer} ct Computer link
    * @param {WindowManager} wm WindowManager link
+   * @param {BusSDB} busSdb BusSDB link
    * @param {Forms} form Form data
    * @returns {Lights} Lights
    */
-  lightsVW (ct, wm, form) {
+  lightsVW (ct, wm, busSdb, form) {
     const DeviceControl = new Lights(form.name, form.basedir, form.vector * 1, form.priority * 1, form.int, ct.sdb, ct.cpu)
     ct.io.addDevice(DeviceControl)
+    DeviceControl.subscribe(busSdb)
 
     const DeviceView = new CTLights(DeviceControl)
     const w = wm.window(form.name, false)
@@ -398,15 +404,16 @@ class ViewActions extends Observable {
    *
    * @param {Computer} ct Computer link
    * @param {WindowManager} wm WindowManager link
+   * @param {BusSDB} busSdb BusSDB link
    * @returns {Lights} Lights
    */
-  addLights (ct, wm) {
+  addLights (ct, wm, busSdb) {
     const _this = this
     const wf = wm.window(_jStr(ViewActions.labels.window_title_lights_data).translate(), false)
     const DeviceForm = new InputDeviceForm(function (form) {
       try {
         localStorageEx.remove('w' + form.name)
-        _this.lightsVW(ct, wm, { name: form.name, basedir: bc.hex2dec(form.basedir), vector: form.vector * 1, priority: form.priority * 1, int: form.int })
+        _this.lightsVW(ct, wm, busSdb, { name: form.name, basedir: bc.hex2dec(form.basedir), vector: form.vector * 1, priority: form.priority * 1, int: form.int })
         wm.remove(wf)
       } catch (e) {
         alert(_jStr(e.message).translate())

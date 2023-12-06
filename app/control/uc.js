@@ -313,7 +313,9 @@ class Uc extends ObservableObserver {
         try {
           if (this.runStep()) this.broadCast({ topic: Uc.topic.pulse })
         } catch (e) {
-          alert(_jStr(e.message).translate())
+          const translated = _jStr(e.message).translate()
+          console.log('Exception running step: ' + e)
+          if (translated) { alert(translated) } else { alert(e.message) }
           this.cpu.clock.stop()
         }
       }

@@ -8,7 +8,7 @@ const listen = {
      * @param { * } message Variable that contains the information needed, if any
      */
   listen (topic, message = null) {
-    throw new Error('Implement this!')
+    throw new Error('Implement listen() in ' + this.constructor.name)
   }
 }
 

@@ -1,5 +1,6 @@
 'use strict'
 
+import { SignalManager } from '../../control/signalmanager.js'
 /**
  * @module control/anchor
  */

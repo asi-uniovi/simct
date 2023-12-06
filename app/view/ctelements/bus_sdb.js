@@ -8,6 +8,9 @@ import { _jStr } from '../../lib/jstr.js'
 import { gr } from '../gridmanager.js'
 import { Bus } from './partials/bus.js'
 import { Bus as BusControl } from '../../control/bus.js'
+import { Memory } from '../../control/memory.js'
+import { SignalManager } from '../../control/signalmanager.js'
+import { Device } from '../../control/devices/device.js'
 
 /**
  * @class BusSDB
@@ -54,10 +57,17 @@ class BusSDB extends Bus {
         this.updateValue(message.value)
         this.deactivate()
         break
-      case 'mdr-ib':
       case 'ib-mdr':
         this.activate()
         if (message.value && message.value.step) this.lastMessageStep = message.value.step
+        break
+      case Memory.topic.mem_sdb:
+      case Device.topic.dev_sdb:
+        this.activate()
+        if (message.value && message.value.step) this.lastMessageStep = message.value.step
+        break
+      case SignalManager.topic.empty:
+        this.deactivate()
         break
       default: {
         if (message.value && message.value.step && this.lastMessageStep !== message.value.step) this.deactivate()

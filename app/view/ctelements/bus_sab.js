@@ -7,6 +7,7 @@
 import { _jStr } from '../../lib/jstr.js'
 import { gr } from '../gridmanager.js'
 import { Bus } from './partials/bus.js'
+import { SignalManager } from '../../control/signalmanager.js'
 
 /**
  * @class BusSAB
@@ -43,6 +44,9 @@ class BusSAB extends Bus {
       case 'ib-mar':
         this.activate()
         if (message.value && message.value.step) this.lastMessageStep = message.value.step
+        break
+      case SignalManager.topic.empty:
+        this.deactivate()
         break
       default: {
         if (message.value && message.value.step && this.lastMessageStep !== message.value.step) this.deactivate()
