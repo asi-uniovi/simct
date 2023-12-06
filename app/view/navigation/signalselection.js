@@ -243,13 +243,14 @@ class SignalSelector {
       try {
         SignalSet.validateSignalSet(_this.sset.signals, CT)
         _this._event_SaveSignals(e)
-    		// Clear selected signals once sent to the control unit
-    		// Needs refactoring: raise btdeactivate click event		
-    		const tmpsignals = Array.from(signalPanel.element.querySelectorAll('input[type="checkbox"]'))
-    		tmpsignals.forEach((item) => {
-    		item.checked = false
-    		})
-    		_this.sset.reset()            
+
+        // Clear selected signals once sent to the control unit
+        // Needs refactoring: raise btdeactivate click event
+        const tmpsignals = Array.from(signalPanel.element.querySelectorAll('input[type="checkbox"]'))
+        tmpsignals.forEach((item) => {
+          item.checked = false
+        })
+        _this.sset.reset()
       } catch (e) {
         alert(e.message)
       }
