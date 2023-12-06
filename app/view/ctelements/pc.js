@@ -4,7 +4,6 @@
  */
 
 import { Register } from './partials/register.js'
-import { RegisterValue } from './partials/registervalue.js'
 
 /**
  * @class PCRegister
