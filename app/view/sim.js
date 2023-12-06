@@ -56,6 +56,8 @@ class Simulator {
       selectedSignals: []
     }
 
+    this.signalSelectorWindow = null
+
     initKeys(this.ct)
 
     this.draw()

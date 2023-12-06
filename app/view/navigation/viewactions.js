@@ -104,6 +104,7 @@ class ViewActions extends Observable {
         // The user must click X to close. Uncomment next line to change this behavior.
         // wm.remove(w)
       })
+      sim.signalSelectorWindow = w
     }
   }
 

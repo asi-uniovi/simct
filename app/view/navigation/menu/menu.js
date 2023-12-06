@@ -120,7 +120,7 @@ function Menu (computer, sim, wm) {
         },
         id: 'menu-modo',
         action: function () {
-          actions.changeMode(computer)
+          actions.changeMode(computer, sim)
           vwactions.resetCables()
         }
       },

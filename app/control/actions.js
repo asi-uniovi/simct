@@ -93,13 +93,18 @@ class Actions extends Observable {
   /**
    * @method changeMode Change the mode of the computer
    * @param {Computer} ct
+   * @param {Simulator} sim
    */
-  changeMode (ct) {
+  changeMode (ct, sim) {
     if (ct.mode === Computer.mode.normal) {
       ct.stop()
       ct.reset()
       ct.manualMode()
     } else {
+      if (sim.signalSelectorWindow) {
+        sim.signalSelectorWindow.close()
+        sim.signalSelectorWindow = null
+      }
       ct.normalMode()
     }
 
