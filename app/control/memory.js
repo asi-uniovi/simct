@@ -14,9 +14,9 @@ import { SignalManager } from './signalmanager.js'
 /**
  * @class Memory
  * @extends ObservableObserver
- * @property { int } size Specifies in bytes de size of the addressable space
- * @property { int[] } positions Specifies in bytes de size of the addressable space
- * @property { int[] } moduletypes Specifies in Kb of available modules
+ * @property { int } size Specifies in bytes the size of the addressable space
+ * @property { int[] } positions Specifies in bytes the size of the addressable space
+ * @property { int[] } moduletypes Specifies the sizes of available modules in KBs
  * @property { boolean } io I/O Devices manager. If false it means that there is no I/O Manager
  * @property { boolean } _readmode Puts memory in read mode
  * @property { int } _readstep Counts the steps since readMode was activated
@@ -96,6 +96,13 @@ class Memory extends ObservableObserver {
     this._writestep = b._writestep
   }
 
+  /**
+   * @method constructor Constructor
+   * @param { int } size Specifies in bytes the size of the addressable space
+   * @param { Bus } sab Link to system address bus
+   * @param { Bus } sdb Link to system data bus
+   * @param { int[] } moduletypes Specifies sizes of available modules in KBs
+   */
   constructor (size, sab, sdb, moduletypes = [4, 8, 16, 32]) {
     super()
 
