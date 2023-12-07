@@ -237,7 +237,9 @@ class SVGCable extends SVGBase {
   }
 
   Activate () {
+    // Re-append the cable to the DOM so that it is visible above other cables
     this.group.svg.parentNode.append(this.group.svg)
+
     this.group.removeClass(this.cabletype + '-inactive').addClass(this.cabletype + '-active')
     return this
   }

@@ -345,7 +345,7 @@ class Simulator {
     SVGCable.new(this.simpaths, 'alu_carry_in', 'signal', ['carry-in']).addAnchor('alu_carry_in').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('CARRY-IN', 1, 'RU').addArrow('R', 0)
     SVGCable.new(this.simpaths, 'bus_alu_ib', 'bus', ['ib-mar', '.*-ib.?']).addAnchor('alu_ib_bus').addPoint(anchors.getAnchor('alu_ib_bus')[0], anchors.getAnchor('tmpe_ib_bus_ib')[1]).addArrow('U', 0)
 
-    SVGCable.new(this.simpaths, 'int_signal', 'int', ['int-uc']).addAnchor('int_signal').goUp(gr.gridTopx(5)).addPoint(tmpPoints.uc_inputs_left[0], anchors.getAnchor('uc_in_left')[1]).addAnchor('uc_in_left').addArrow('R', 4).setLabel('INT', 1, 'LU')
+    SVGCable.new(this.simpaths, 'int_signal', 'int', ['int-uc']).addAnchor('int_signal').goUp(gr.gridTopx(5)).addPoint(tmpPoints.uc_inputs_left[0] - 10, anchors.getAnchor('uc_in_left')[1] - 32).addAnchor('uc_in_left').addArrow('R', 4).setLabel('INT', 1, 'LU')
 
     SVGCable.new(this.simpaths, 'scb_mem_write', 'signal', [SignalManager.topic.mem_write]).addAnchor('memory_write_read').addAnchorY('mem_write_in').addAnchor('mem_write_in').setLabel('WRITE', 2, 'RU', gr.gridTopx(0.5)).addArrow('L', 2)
     SVGCable.new(this.simpaths, 'scb_mem_read', 'signal', [SignalManager.topic.mem_read]).addAnchor('memory_write_read').addAnchorY('mem_read_in').addAnchor('mem_read_in').setLabel('READ', 2, 'RU', gr.gridTopx(0.5)).addArrow('L', 2)
