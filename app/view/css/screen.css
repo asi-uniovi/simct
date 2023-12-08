@@ -2,13 +2,13 @@
 .screen-footer {
     margin-top: 10px;
     /* height: 29px; */
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-size: 12px;
     font-weight: bold;
 }
 
 .screen-wrap {
-    border: 1px solid #000000;
+    border: 1px solid var(--window-border-color);
     width: 180px;
     background-color: #000000
 }
@@ -28,7 +28,7 @@
 }
 
 .radio-onoff-wrap label {
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-size: 12px;
 }
 
@@ -61,7 +61,7 @@
     height: 14px;
     text-align: center;
     font-size: 16px;
-    color: #ffffff;
+    color: var(--main-text-color);
     line-height: 16px;
 }
 

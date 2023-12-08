@@ -1,7 +1,7 @@
 /*LIGHTS*/
 
 .lights-head {
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-size: 12px;
     margin-left: 20px;
     margin: 10px 0px 0px 5px
@@ -23,14 +23,14 @@
     /* margin-top: 20px; */
     margin: 25px 20px 15px 5px;
     padding: 5px 0 15px 15px;
-    border: 1px solid #49b58e;
+    border: 1px solid var(--stroke-color);
 }
 
 .lights-in .label-panel,
 .lights-out .label-panel {
     position: absolute;
-    background-color: #49b58e;
-    color: #000000;
+    background-color: var(--stroke-color);
+    color: var(--window-border-color);
     font-weight: bold;
     top: -12px;
     padding: 4px
@@ -51,7 +51,7 @@
 .light-wrap label,
 .switch-wrap label {
     font-size: 12px;
-    color: #FFFFFF;
+    color: var(--main-text-color);
 }
 
 .switch {
@@ -121,11 +121,11 @@
 }
 
 input:checked+.slider {
-    background-color: #49b58e;
+    background-color: var(--stroke-color);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #49b58e;
+    box-shadow: 0 0 1px var(--stroke-color);
 }
 
 input:checked+.slider:before {

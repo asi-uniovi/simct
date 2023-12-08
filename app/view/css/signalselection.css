@@ -52,7 +52,7 @@
     display: inline-block;
 
     margin: 0px 8px 0px 0px;
-    color: #ffffff;
+    color: var(--main-text-color);
     position: relative;
     width: 85px;
 }
@@ -84,10 +84,10 @@
 
 .signalblock {
     display: inline-block;
-    border: 1px solid #49b58e;
+    border: 1px solid var(--stroke-color);
     padding: 14px 0px 10px 0px;
     margin: 20px 0px 0px 5px;
-    color: #ffffff;
+    color: var(--main-text-color);
     position: relative;
     width: 85px;
 }
@@ -96,7 +96,7 @@
     position: absolute;
     top: -11px;
     left: 5px;
-    background-color: #49b58e;
+    background-color: var(--stroke-color);
     color: #000000;
     font-weight: bold;
     font-size: 12px;

@@ -1,21 +1,21 @@
 #contextmenu {
-  position: absolute;
-  /*height: 10px;*/
-  width: 190px;
-  border: 1px solid #000000;
-  background-color: #4297A1;
-  box-shadow: 0px 0px 1px 1px #000000;
-  color: #4ee258;
-  font-size: 14px;
-  padding: 5px;
-  font-weight: bold;
-  z-index: 99999;
+    position: absolute;
+    /*height: 10px;*/
+    width: 190px;
+    border: 1px solid var(--window-border-color);
+    background-color: var(--secondary-background-color);
+    box-shadow: 0px 0px 1px 1px var(--window-border-color)000;
+    color: var(--secondary-text-color);
+    font-size: 14px;
+    padding: 5px;
+    font-weight: bold;
+    z-index: 99999;
 }
 
 #contextmenu ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 #contextmenu li {
-  padding: 3px;
+    padding: 3px;
 }

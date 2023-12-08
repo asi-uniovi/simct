@@ -94,13 +94,13 @@ class SVGPath extends SVGBase {
     // this.svg.style.strokeWidth = 4;
 
     switch (type) {
-      case 'bus': this.svg.style.stroke = '#00aef5'
+      case 'bus': this.svg.style.stroke = 'var(--bus-inactive-color)'
         break
-      case 'bus-active': this.svg.style.stroke = '#ec00f5'
+      case 'bus-active': this.svg.style.stroke = 'var(--bus-active-color)'
         break
     }
 
-    // this.svg.style.stroke = '#ec00f5';
+    // this.svg.style.stroke = 'var(--bus-active-color)';
     this.arrowStart.removeClass('arrow-bullet-inactive').addClass('arrow-bus-bullet-inactive')
     this.arrowEnd.removeClass('arrow-bullet-inactive').addClass('arrow-bus-bullet-inactive')
     return this

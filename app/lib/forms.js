@@ -143,8 +143,8 @@ class Forms {
         left: position.x + 'px',
         width: position.width + 'px',
         height: position.height + 'px',
-        backgroundColor: '#4297A1',
-        color: '#4ee258',
+        backgroundColor: 'var(--secondary-background-color)',
+        color: 'var(--secondary-text-color)',
         fontSize: gr.gridSize * 2 + 'px',
         fontFamily: 'monospace'
       })
@@ -152,7 +152,7 @@ class Forms {
       input.style({
         width: position.width - 5 + 'px',
         height: position.height + 'px',
-        color: '#4ee258',
+        color: 'var(--secondary-text-color)',
         border: '0px',
         'text-align': 'center',
         'font-size': gr.gridSize * 2 + 'px',

@@ -11,7 +11,7 @@
     clear: both;
     display: block;
     height: 30px;
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-family: monospace !important;
     width: 280px;
 }
@@ -28,7 +28,7 @@
     font-size: 14px;
     text-align: right;
     font-weight: bold;
-    color: #49b58e;
+    color: var(--stroke-color);
 }
 
 .vt-nodewrap-value {
@@ -39,9 +39,9 @@
     /* padding: 0px 5px; */
     line-height: 30px;
     font-size: 18px;
-    border-bottom: 1px solid #49b58e;
-    border-right: 1px solid #49b58e;
-    border-left: 1px solid #49b58e;
+    border-bottom: 1px solid var(--stroke-color);
+    border-right: 1px solid var(--stroke-color);
+    border-left: 1px solid var(--stroke-color);
     position: relative;
     text-align: center;
 }
@@ -55,30 +55,30 @@
     /* padding: 0px 5px; */
     line-height: 30px;
     font-size: 14px;
-    /* border-bottom: 1px solid #49b58e;
-    border-right: 1px solid #49b58e; */
-    /* border-left: 1px solid #49b58e; */
+    /* border-bottom: 1px solid var(--stroke-color);
+    border-right: 1px solid var(--stroke-color); */
+    /* border-left: 1px solid var(--stroke-color); */
     position: relative;
     text-align: left;
-    color: #4ee258
+    color: var(--secondary-text-color)
 }
 
 /* .vt-nodewrap-value input {
     position: absolute;
-    color: #4ee258;
+    color: var(--secondary-text-color);
     font-size: 18px;
     font-family: monospace;
-    background-color: #2E6D75;
-    border: 0px solid #000000
+    background-color: var(--fill-color);
+    border: 0px solid var(--window-border-color)
 } */
 
 .vt-nodewrap-value input {
     width: 100%;
-    color: #4ee258;
+    color: var(--secondary-text-color);
     margin: 0px !important;
     padding: 0px 0px !important;
-    border: 0px solid #000000;
-    background-color: #2E6D75;
+    border: 0px solid var(--window-border-color);
+    background-color: var(--fill-color);
     font-size: 18px;
     line-height: 30px;
     font-family: monospace;
@@ -88,7 +88,7 @@
 
 .vt-nodewrap:first-child .vt-nodewrap-value,
 .vt-nodewrap:first-child {
-    border-top: 1px solid #49b58e;
+    border-top: 1px solid var(--stroke-color);
 }
 
 .vt-header {
@@ -96,7 +96,7 @@
     padding: 0px 5px;
     width: 66px;
     text-align: center;
-    color: #FFFFFF
+    color: var(--main-text-color)
 }
 
 /* .table-outer {
@@ -125,12 +125,12 @@
 
 
 .list-item input {
-    background-color: #2E6D75;
-    color: #4ee258
+    background-color: var(--fill-color);
+    color: var(--secondary-text-color)
 }
 
 #memeditor #vt-scroll {
-    /* border: 1px solid #49b58e; */
+    /* border: 1px solid var(--stroke-color); */
     clear: both;
 }
 

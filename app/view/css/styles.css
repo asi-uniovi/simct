@@ -1,18 +1,35 @@
-body {
-    background-color: #293C47;
-
+:root {
+    --background-color: #293C47;
+    --secondary-background-color: #4297A1;
+    --stroke-color: #49b58e;
+    --fill-color: #2E6D75;
+    --highlight-color: #60e467;
+    --reg-stroke-color: #4297A1;
+    --reg-fill-color: #4297A1;
+    --main-text-color: #FFFFFF;
+    --secondary-text-color: #4ee258;
+    --active-cable-color: #ffcb4e;
+    --active-register-color: #ffcb4e;
+    --bus-inactive-color: #00aef5;
+    --bus-active-color: #ec00f5;
+    --bus-blue-color: #cccc;
+    --window-border-color: #000000;
+    --icon-es-stroke: #0f0;
 }
 
+body {
+    background-color: var(--background-color);
+}
 
 .tmp {
     fill: none;
-    stroke: #49b58e;
+    stroke: var(--stroke-color);
     stroke-width: 1.5;
 }
 
 #triggerline {
     fill: none;
-    stroke: #60e467;
+    stroke: var(--highlight-color);
     stroke-width: 1.5;
 }
 
@@ -20,22 +37,22 @@ body {
 .bus,
 .alu-keystone,
 .alu-keystone {
-    fill: #2E6D75;
-    stroke: #49b58e;
+    fill: var(--fill-color);
+    stroke: var(--stroke-color);
     stroke-width: 1.5;
 }
 
 .register-sq-inner,
 .register-sq-step,
 [class^="alu-reg"] {
-    fill: #4297A1;
-    stroke: #4297A1;
+    fill: var(--reg-fill-color);
+    stroke: var(--reg-stroke-color);
     stroke-width: 1.8;
 }
 
 .register-value,
 .alu-text {
-    fill: #FFFFFF;
+    fill: var(--main-text-color);
 }
 
 body {
@@ -45,38 +62,20 @@ body {
 }
 
 .component-label {
-    fill: #49b58e;
+    fill: var(--stroke-color);
 }
 
 #mousebox {
     position: absolute;
     /*height: 10px;*/
     width: 190px;
-    border: 1px solid #49b58e;
-    background-color: #4297A1;
-    color: #4ee258;
+    border: 1px solid var(--stroke-color);
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
     font-size: 12px;
     padding: 5px;
     font-weight: bold;
 }
-
-
-
-
-
-#circle-joint {
-    stroke: black;
-
-}
-
-.circle-joint-inactive {
-    fill: #000;
-}
-
-.circle-joint-active {
-    fill: #0f0;
-}
-
 
 .path {
     stroke-width: 2
@@ -87,29 +86,29 @@ body {
 }
 
 .signal-inactive text {
-    fill: #49b58e;
+    fill: var(--stroke-color);
 }
 
 .signal-inactive [class^=arrow] {
-    fill: #49b58e;
+    fill: var(--stroke-color);
 }
 
 .signal-inactive polyline {
     fill: none;
-    stroke: #49b58e;
+    stroke: var(--stroke-color);
 }
 
 .int-inactive text {
-    fill: #49b58e;
+    fill: var(--stroke-color);
 }
 
 .int-inactive [class^=arrow] {
-    fill: #49b58e;
+    fill: var(--stroke-color);
 }
 
 .int-inactive polyline {
     fill: none;
-    stroke: #49b58e;
+    stroke: var(--stroke-color);
 }
 
 .int-active {
@@ -118,44 +117,44 @@ body {
 }
 
 .int-active text {
-    fill: #ffcb4e;
+    fill: var(--active-cable-color);
 }
 
 .int-active [class^=arrow] {
-    fill: #ffcb4e;
+    fill: var(--active-cable-color);
 }
 
 .int-active polyline {
     fill: none;
-    stroke: #ffcb4e;
+    stroke: var(--active-cable-color);
 }
 
 
 .bus-inactive text {
-    fill: #00aef5;
+    fill: var(--bus-inactive-color);
 }
 
 .bus-inactive polyline {
     fill: none;
-    stroke: #00aef5;
+    stroke: var(--bus-inactive-color);
 }
 
 .bus-inactive [class^=arrow-] {
-    fill: #00aef5;
+    fill: var(--bus-inactive-color);
 }
 
 
 .wire-text {
-    fill: #49b58e;
+    fill: var(--stroke-color);
     font-size: 4px;
 }
 
 .arrow-bullet-inactive {
-    fill: #49b58e;
+    fill: var(--stroke-color);
 }
 
 .arrow-bullet-active {
-    fill: #ffcb4e;
+    fill: var(--active-cable-color);
 }
 
 .signal-active {
@@ -164,35 +163,35 @@ body {
 }
 
 .signal-active text {
-    fill: #ffcb4e;
+    fill: var(--active-cable-color);
 }
 
 .signal-active [class^=arrow] {
-    fill: #ffcb4e;
+    fill: var(--active-cable-color);
 }
 
 .signal-active polyline {
     fill: none;
-    stroke: #ffcb4e;
+    stroke: var(--active-cable-color);
 }
 
 .bus-active text {
-    fill: #ec00f5;
+    fill: var(--bus-active-color);
 }
 
 .bus-active polyline {
     fill: none;
-    stroke: #ec00f5;
+    stroke: var(--bus-active-color);
 }
 
 .bus-active [class^=arrow-] {
-    fill: #ec00f5;
+    fill: var(--bus-active-color);
 }
 
 
 .bus-blue {
-    fill: #cccc;
-    stroke: #ffcb4e;
+    fill: var(--bus-blue-color);
+    stroke: var(--active-cable-color);
 }
 
 *:focus {
@@ -213,14 +212,9 @@ input {
     border: 0px;
 }
 
-
-
-
 .icons-es {
-    stroke: #0f0;
+    stroke: var(--icon-es-stroke);
 }
-
-
 
 .register-value {
     font-family: monospace !important;
@@ -229,20 +223,20 @@ input {
 #alu .active,
 .register-value.active {
     /* font-family: monospace !important; */
-    fill: #ffcb4e
+    fill: var(--active-register-color)
 }
 
 
 
 #SAB.active .bus,
 #SDB.active .bus {
-    stroke: #ec00f5 !important;
+    stroke: var(--bus-active-color) !important;
     fill: #f175f5 !important;
 }
 
 #SAB.active .register-value,
 #SDB.active .register-value {
-    fill: #ffcb4e;
+    fill: var(--active-cable-color);
 }
 
 #SAB.active text.register-value,
@@ -252,7 +246,7 @@ input {
 
 
 /* .inputshadow {
-    -webkit-box-shadow: inset 0 0 10px #000;
-    -moz-box-shadow: inset 0 0 10px #000;
-    box-shadow: inset 0 0 10px #000;
+    -webkit-box-shadow: inset 0 0 10px var(--window-border-color);
+    -moz-box-shadow: inset 0 0 10px var(--window-border-color);
+    box-shadow: inset 0 0 10px var(--window-border-color);
 } */

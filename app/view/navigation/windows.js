@@ -69,7 +69,7 @@ class WindowTPL {
 
     _this.w.style({ left: _this.w.offsetWidth / 2, top: _this.w.offsetHeight / 2 + 20 })
 
-    _this.w.style.boxShadow = '0px 0px 1px 1px #000000'
+    _this.w.style.boxShadow = '0px 0px 1px 1px var(--window-border-color)'
 
     _this.w.movetoXY = function (x, y) {
       const position = { left: x - _this.lastPosition.offsetx + 'px', top: y - _this.lastPosition.offsety + 'px' }

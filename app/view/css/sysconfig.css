@@ -5,7 +5,7 @@
 
 .system-configuration label.lang-label {
     /* float: left; */
-    color: #FFFFFF;
+    color: var(--main-text-color);
 
 }
 

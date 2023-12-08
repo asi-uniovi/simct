@@ -15,7 +15,7 @@
     /* background-color: #0f0; */
     position: absolute;
     left: 50px;
-    color: #fff;
+    color: var(--main-text-color);
     text-align: center;
 }
 
@@ -25,7 +25,7 @@
     /* background-color: #0f0; */
     position: absolute;
     left: 360px;
-    color: #fff;
+    color: var(--main-text-color);
     text-align: center;
 }
 
@@ -103,7 +103,7 @@
     height: 464px;
     /* background-color: #CCCC; */
 
-    background-image: linear-gradient(to bottom, #4297A1 95%, #59f58e 5%);
+    background-image: linear-gradient(to bottom, var(--secondary-background-color) 95%, #59f58e 5%);
     background-size: 1px 29px;
 }
 
@@ -150,9 +150,9 @@
 [class^=mem-module] {
     width: 198px;
     /* margin: 0px auto; */
-    color: #FFFFFF;
+    color: var(--main-text-color);
     font-weight: bold;
-    border: 1px solid #000000;
+    border: 1px solid var(--window-border-color);
 }
 
 .modules [class^=mem-module] {
