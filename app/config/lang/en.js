@@ -24,6 +24,7 @@ const en = {
   'labels.menu.menu_file': 'File',
   'labels.menu.menu_file_open': 'Open eje file...',
   'labels.menu.system_config': 'Settings',
+  'labels.menu.change_theme': 'Change theme',
   'labels.menu.menu_file_opensim': 'Open sim file...',
   'labels.menu.menu_file_savesim': 'Save sim file...',
   'labels.menu.menu_offline_version': 'Download offline version',

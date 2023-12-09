@@ -48,6 +48,9 @@ class Simulator {
     State.config.lang = getCookie('lang') ? getCookie('lang') : 'es'
     gr.gridSize = 9
 
+    const currentTheme = localStorage.getItem('theme') || 'theme-dark'
+    document.documentElement.className = currentTheme
+
     this.ct = new Computer()
 
     this.ct.mem.addModule(0x0000, 32)
@@ -380,7 +383,6 @@ class Simulator {
     document.querySelector('#menu-main').append(menu.element)
 
     const langMenu = LangMenu(this)
-
     document.querySelector('#menu-main').append(langMenu.element)
 
     const sim = this

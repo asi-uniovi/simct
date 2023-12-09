@@ -66,10 +66,6 @@
     margin: 0px;
 }
 
-.btn.close:hover {
-    background-color: var(--stroke-color);
-}
-
 
 .btn.close:after {
     position: absolute;

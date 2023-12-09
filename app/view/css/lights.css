@@ -29,8 +29,8 @@
 .lights-in .label-panel,
 .lights-out .label-panel {
     position: absolute;
-    background-color: var(--stroke-color);
-    color: var(--window-border-color);
+    background-color: var(--secondary-background-color);
+    color: var(--main-text-color);
     font-weight: bold;
     top: -12px;
     padding: 4px

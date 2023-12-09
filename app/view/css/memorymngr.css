@@ -61,13 +61,13 @@
 }
 
 .modules-left li {
-    color: #59f58e;
+    color: var(--mem-manager-labels-color);
     text-align: right;
     padding-right: 5px;
 }
 
 .modules-right li {
-    color: #59f58e;
+    color: var(--mem-manager-labels-color);
     text-align: left;
     padding-left: 3px;
 }
@@ -103,7 +103,7 @@
     height: 464px;
     /* background-color: #CCCC; */
 
-    background-image: linear-gradient(to bottom, var(--secondary-background-color) 95%, #59f58e 5%);
+    background-image: linear-gradient(to bottom, var(--secondary-background-color) 95%, var(--mem-manager-separator-color) 5%);
     background-size: 1px 29px;
 }
 
@@ -144,7 +144,6 @@
 
     margin-left: auto;
     margin-right: auto;
-
 }
 
 [class^=mem-module] {
@@ -161,20 +160,20 @@
 
 .mem-module4 {
     height: 27px;
-    background-color: #CCCCCC;
+    background-color: var(--mem-module4-color);
 }
 
 .mem-module8 {
     height: 56px;
-    background-color: #8ec3ca;
+    background-color: var(--mem-module8-color);
 }
 
 .mem-module16 {
     height: 114px;
-    background-color: #4a89ad;
+    background-color: var(--mem-module16-color);
 }
 
 .mem-module32 {
     height: 230px;
-    background-color: #1972a5;
+    background-color: var(--mem-module32-color);
 }

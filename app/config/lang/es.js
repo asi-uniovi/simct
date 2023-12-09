@@ -24,6 +24,7 @@ const es = {
   'labels.menu.menu_file': 'Archivo',
   'labels.menu.menu_file_open': 'Abrir ejecutable...',
   'labels.menu.system_config': 'Configuración',
+  'labels.menu.change_theme': 'Cambiar tema',
   'labels.menu.menu_file_opensim': 'Abrir simulación...',
   'labels.menu.menu_file_savesim': 'Guardar simulación...',
   'labels.menu.menu_offline_version': 'Descargar versión offline',

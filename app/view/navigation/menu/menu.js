@@ -22,6 +22,7 @@ const menuOptions = {
 
   menu_file_open: 'labels.menu.menu_file_open',
   menu_system_config: 'labels.menu.system_config',
+  menu_change_theme: 'labels.menu.change_theme',
   menu_file_opensim: 'labels.menu.menu_file_opensim',
   menu_file_savesim: 'labels.menu.menu_file_savesim',
   menu_offline_version: 'labels.menu.menu_offline_version',
@@ -56,6 +57,10 @@ const menuOptions = {
  * @returns menu dom element
  */
 function Menu (computer, sim, wm) {
+  // Read the theme variable from local storage and, if it is not defined, set
+  // it to "dark"
+  let currentTheme = localStorage.getItem('theme') || 'dark'
+  currentTheme = currentTheme.replace('theme-', '')
   const menutmp = [
     {
       title: _jStr(menuOptions.menu_file).translate(),
@@ -70,6 +75,7 @@ function Menu (computer, sim, wm) {
       { title: _jStr(menuOptions.menu_file_savesim).translate(), id: 'load-file', action: function () { vwactions.saveSim(sim, wm) } },
       { separator: true },
       { title: _jStr(menuOptions.menu_system_config).translate(), id: 'sys-config', action: function () { vwactions.systemConfigurator(sim, wm) } },
+      { title: _jStr(menuOptions.menu_change_theme).translate() + ' (' + currentTheme + ')', id: 'change-theme', action: function () { vwactions.changeTheme() } },
       { separator: true },
       { title: _jStr(menuOptions.menu_offline_version).translate(), id: 'offline-version', action: function () { vwactions.downloadZip(sim, wm) } }
       ]
@@ -224,4 +230,57 @@ function LangMenu (sim) {
   return langMenu
 }
 
-export { Menu, LangMenu, menuOptions }
+function getThemes () {
+  // Get all the stylesheets
+  let styleSheets = Array.from(document.styleSheets)
+
+  // Filter out any stylesheets from other domains (cross-origin security)
+  styleSheets = styleSheets.filter(sheet => sheet.href === null || sheet.href.startsWith(window.location.origin))
+
+  // Initialize an array to hold the theme names
+  const themes = []
+
+  // Loop through the stylesheets
+  styleSheets.forEach((styleSheet) => {
+  // Use a try-catch block to handle any potential security errors
+    try {
+    // Loop through the CSS rules in the stylesheet
+      Array.from(styleSheet.cssRules || []).forEach((rule) => {
+        // Check if the rule is a style rule
+        if (rule.constructor.name === 'CSSStyleRule') {
+        // Split the selector by commas
+          const selectors = rule.selectorText.split(',')
+          // Check each selector individually
+          selectors.forEach((selector) => {
+          // Trim whitespace and check if the selector is a subclass of :root
+            if (selector.trim().startsWith(':root.')) {
+            // Extract the theme name and add it to the themes array
+              const themeName = selector.trim().split('.').pop()
+              themes.push(themeName)
+            }
+          })
+        }
+      })
+    } catch (e) {
+      console.error('Cannot access stylesheet: ', e)
+    }
+  })
+
+  return themes
+}
+
+/**
+ * @method RotateTheme Rotates the theme
+ * @returns next theme
+ **/
+function RotateTheme () {
+  const themes = getThemes()
+  const currentTheme = localStorage.getItem('theme') || 'theme-dark'
+  const nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length]
+  document.documentElement.className = nextTheme
+  localStorage.setItem('theme', nextTheme)
+
+  return nextTheme
+}
+
+export { Menu, LangMenu, RotateTheme, menuOptions }

@@ -104,12 +104,12 @@ li.drop ul.show {
 }
 
 li.menu-h.hover {
-    background-color: var(--stroke-color);
+    background-color: var(--menu-hover);
     color: var(--main-text-color);
 }
 
 li.menu-h.hover>ul li.hover {
-    background-color: var(--stroke-color);
+    background-color: var(--menu-hover);
 }
 
 
