@@ -10,7 +10,7 @@
     --reg-stroke-color: #4297A1;
     --reg-fill-color: #4297A1;
     --main-text-color: #FFFFFF;
-    --secondary-text-color: #4ee258;
+    --secondary-text-color: #c4f2f7;
     --active-cable-color: #ffcb4e;
     --active-cable-shadow: #ffff0099;
     --active-register-color: #ffcb4e;
@@ -24,8 +24,8 @@
     --reg-stroke-width: 1.8;
     --element-stroke-width: 1.5;
     --menu-hover: #49b58e;
-    --mem-manager-labels-color: #59f58e;
-    --mem-manager-separator-color: #59f58e;
+    --mem-manager-labels-color: #c4f2f7;
+    --mem-manager-separator-color: #c4f2f7;
     --mem-module4-color: #CCCCCC;
     --mem-module8-color: #8ec3ca;
     --mem-module16-color: #4a89ad;
