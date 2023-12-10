@@ -37,7 +37,7 @@
 
 :root.theme-light-grey {
     --background-color: #ffffff;
-    --secondary-background-color: #999999;
+    --secondary-background-color: #bbbbbb;
     --stroke-color: #808080;
     --fill-color: #d4d4d4;
     --highlight-color: #ff0000;
