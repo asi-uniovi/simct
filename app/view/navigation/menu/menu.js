@@ -57,10 +57,6 @@ const menuOptions = {
  * @returns menu dom element
  */
 function Menu (computer, sim, wm) {
-  // Read the theme variable from local storage and, if it is not defined, set
-  // it to "dark"
-  let currentTheme = localStorage.getItem('theme') || 'dark'
-  currentTheme = currentTheme.replace('theme-', '')
   const menutmp = [
     {
       title: _jStr(menuOptions.menu_file).translate(),
@@ -75,7 +71,7 @@ function Menu (computer, sim, wm) {
       { title: _jStr(menuOptions.menu_file_savesim).translate(), id: 'load-file', action: function () { vwactions.saveSim(sim, wm) } },
       { separator: true },
       { title: _jStr(menuOptions.menu_system_config).translate(), id: 'sys-config', action: function () { vwactions.systemConfigurator(sim, wm) } },
-      { title: _jStr(menuOptions.menu_change_theme).translate() + ' (' + currentTheme + ')', id: 'change-theme', action: function () { vwactions.changeTheme() } },
+      { title: _jStr(menuOptions.menu_change_theme).translate(), id: 'change-theme', action: function () { vwactions.changeTheme() } },
       { separator: true },
       { title: _jStr(menuOptions.menu_offline_version).translate(), id: 'offline-version', action: function () { vwactions.downloadZip(sim, wm) } }
       ]
@@ -230,6 +226,18 @@ function LangMenu (sim) {
   return langMenu
 }
 
+/**
+ * @method getThemes Gets all the available theme names by parsing the
+ * stylesheets.
+ *
+ * Loops through all stylesheets, gets the CSS rules, checks for :root
+ * selectors, extracts the theme name after :root., and collects theme names in
+ * an array.
+ *
+ * Handles cross-origin stylesheets and errors accessing stylesheets.
+ *
+ * @returns array of theme name strings.
+*/
 function getThemes () {
   // Get all the stylesheets
   let styleSheets = Array.from(document.styleSheets)

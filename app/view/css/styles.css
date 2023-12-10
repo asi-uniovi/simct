@@ -35,79 +35,7 @@
     --button-active-background-color: #ccc;
 }
 
-:root.theme-light-brown {
-    --background-color: #ffffff;
-    --secondary-background-color: #e4d8cb;
-    --stroke-color: #817c77;
-    --fill-color: #b2aca6;
-    --highlight-color: #9B2226;
-    --label-color: #333;
-    --signal-inactive-color: #716d68;
-    --reg-stroke-color: #222;
-    --reg-fill-color: #928d88;
-    --main-text-color: #333;
-    --secondary-text-color: #333;
-    --active-cable-color: #d53e4f;
-    --active-cable-shadow: #d53e4f77;
-    --active-register-color: #bd0a22;
-    --bus-inactive-color: #716d68;
-    --bus-active-color: #5e4fa2;
-    --bus-active-shadow: #5e4fa2;
-    --bus-active-fill-color: #816dda;
-    --bus-blue-color: #cccc;
-    --window-border-color: #000000;
-    --icon-es-stroke: #0f0;
-    --reg-stroke-width: 0.5;
-    --element-stroke-width: 1;
-    --menu-hover: #817c77;
-    --mem-manager-labels-color: #333;
-    --mem-manager-separator-color: #817c77;
-    --mem-module4-color: #CCCCCC;
-    --mem-module8-color: #8ec3ca;
-    --mem-module16-color: #fdae61;
-    --mem-module32-color: #d53e4f;
-    --button-highlight-color: #e18828;
-    --button-highlight-shadow: #e4d8cb;
-    --button-active-background-color: #ccc;
-}
-
-:root.theme-light-blue {
-    --background-color: #ffffff;
-    --secondary-background-color: #abb2b9;
-    --stroke-color: #101010;
-    --fill-color: #a6acb2;
-    --highlight-color: #9B2226;
-    --label-color: #333;
-    --signal-inactive-color: #687176;
-    --reg-stroke-color: #222;
-    --reg-fill-color: #888d92;
-    --main-text-color: #333;
-    --secondary-text-color: #101010;
-    --active-cable-color: #d53e4f;
-    --active-cable-shadow: #d53e4f99;
-    --active-register-color: #bd0a22;
-    --bus-inactive-color: #687176;
-    --bus-active-color: #3288bd;
-    --bus-active-shadow: #3288bd99;
-    --bus-active-fill-color: #9ab9cd;
-    --bus-blue-color: #cccc;
-    --window-border-color: #000000;
-    --icon-es-stroke: #0f0;
-    --reg-stroke-width: 0;
-    --element-stroke-width: 0.75;
-    --menu-hover: #E9D8A6;
-    --mem-manager-labels-color: #333;
-    --mem-manager-separator-color: #dbe4ed;
-    --mem-module4-color: #CCCCCC;
-    --mem-module8-color: #8ec3ca;
-    --mem-module16-color: #4a89ad;
-    --mem-module32-color: #1972a5;
-    --button-highlight-color: #3288bd;
-    --button-highlight-shadow: #e4d8cb;
-    --button-active-background-color: #ccc;
-}
-
-:root.theme-light3 {
+:root.theme-light-grey {
     --background-color: #ffffff;
     --secondary-background-color: #999999;
     --stroke-color: #808080;
@@ -142,119 +70,40 @@
     --button-active-background-color: #ccc;
 }
 
-:root.theme-light4 {
+:root.theme-light-blue {
     --background-color: #ffffff;
-    --secondary-background-color: #e3e4e229;
-    --stroke-color: #808080;
-    --fill-color: #d4d4d4;
-    --highlight-color: #ff0000;
+    --secondary-background-color: #8f9398;
+    --stroke-color: #101010;
+    --fill-color: #a6acb2;
+    --highlight-color: #9B2226;
     --label-color: #333;
-    --signal-inactive-color: #808080;
-    --reg-stroke-color: #333;
-    --reg-fill-color: #d4d4d4;
+    --signal-inactive-color: #687176;
+    --reg-stroke-color: #222;
+    --reg-fill-color: #888d92;
     --main-text-color: #333;
-    --secondary-text-color: #0000ff;
-    --active-cable-color: #ff0000;
-    --active-register-color: #ff0000;
-    --bus-inactive-color: #808080;
-    --bus-active-color: #008000;
-    --bus-blue-color: #0000ff;
+    --secondary-text-color: #101010;
+    --active-cable-color: #d53e4f;
+    --active-cable-shadow: #d53e4f99;
+    --active-register-color: #bd0a22;
+    --bus-inactive-color: #687176;
+    --bus-active-color: #3288bd;
+    --bus-active-shadow: #3288bd99;
+    --bus-active-fill-color: #9ab9cd;
+    --bus-blue-color: #cccc;
     --window-border-color: #000000;
-    --icon-es-stroke: #008000;
-    --reg-stroke-width: 0.5;
-    --element-stroke-width: 1;
-}
-
-:root.theme-light-github {
-    --background-color: #ffffff;
-    --secondary-background-color: #fafbfc;
-    --stroke-color: #e1e4e8;
-    --fill-color: #d1d5da;
-    --highlight-color: #f9826c;
-    --label-color: #24292e;
-    --signal-inactive-color: #e1e4e8;
-    --reg-stroke-color: #24292e;
-    --reg-fill-color: #d1d5da;
-    --main-text-color: #24292e;
-    --secondary-text-color: #586069;
-    --active-cable-color: #f9826c;
-    --active-register-color: #f9826c;
-    --bus-inactive-color: #e1e4e8;
-    --bus-active-color: #28a745;
-    --bus-blue-color: #0366d6;
-    --window-border-color: #e1e4e8;
-    --icon-es-stroke: #28a745;
-    --reg-stroke-width: 0.5;
-    --element-stroke-width: 1;
-}
-
-:root.theme-light-gruvbox {
-    --background-color: #fbf1c7;
-    --secondary-background-color: #ebdbb2;
-    --stroke-color: #7c6f64;
-    --fill-color: #d5c4a1;
-    --highlight-color: #cc241d;
-    --label-color: #3c3836;
-    --signal-inactive-color: #7c6f64;
-    --reg-stroke-color: #3c3836;
-    --reg-fill-color: #d5c4a1;
-    --main-text-color: #3c3836;
-    --secondary-text-color: #504945;
-    --active-cable-color: #cc241d;
-    --active-register-color: #cc241d;
-    --bus-inactive-color: #7c6f64;
-    --bus-active-color: #98971a;
-    --bus-blue-color: #458588;
-    --window-border-color: #7c6f64;
-    --icon-es-stroke: #98971a;
-    --reg-stroke-width: 0.5;
-    --element-stroke-width: 1;
-}
-
-:root.theme-light-github-plus {
-    --background-color: #ffffff;
-    --secondary-background-color: #fafbfc;
-    --stroke-color: #d1d5da;
-    --fill-color: #c6cbd1;
-    --highlight-color: #f9826c;
-    --label-color: #24292e;
-    --signal-inactive-color: #d1d5da;
-    --reg-stroke-color: #24292e;
-    --reg-fill-color: #c6cbd1;
-    --main-text-color: #24292e;
-    --secondary-text-color: #586069;
-    --active-cable-color: #f9826c;
-    --active-register-color: #f9826c;
-    --bus-inactive-color: #d1d5da;
-    --bus-active-color: #28a745;
-    --bus-blue-color: #0366d6;
-    --window-border-color: #d1d5da;
-    --icon-es-stroke: #28a745;
-    --reg-stroke-width: 0.5;
-    --element-stroke-width: 1;
-}
-
-:root.theme-light-github-plus-dark {
-    --background-color: #ffffff;
-    --secondary-background-color: #e8e8e8;
-    --stroke-color: #a8a8a8;
-    --fill-color: #909090;
-    --highlight-color: #cc241d;
-    --label-color: #1d1d1d;
-    --signal-inactive-color: #a8a8a8;
-    --reg-stroke-color: #1d1d1d;
-    --reg-fill-color: #909090;
-    --main-text-color: #1d1d1d;
-    --secondary-text-color: #444444;
-    --active-cable-color: #cc241d;
-    --active-register-color: #cc241d;
-    --bus-inactive-color: #a8a8a8;
-    --bus-active-color: #689d6a;
-    --bus-blue-color: #458588;
-    --window-border-color: #a8a8a8;
-    --icon-es-stroke: #689d6a;
-    --reg-stroke-width: 0.5;
-    --element-stroke-width: 1;
+    --icon-es-stroke: #0f0;
+    --reg-stroke-width: 0;
+    --element-stroke-width: 0.75;
+    --menu-hover: #E9D8A6;
+    --mem-manager-labels-color: #333;
+    --mem-manager-separator-color: #dbe4ed;
+    --mem-module4-color: #CCCCCC;
+    --mem-module8-color: #8ec3ca;
+    --mem-module16-color: #4a89ad;
+    --mem-module32-color: #1972a5;
+    --button-highlight-color: #3288bd;
+    --button-highlight-shadow: #e4d8cb;
+    --button-active-background-color: #ccc;
 }
 
 body {

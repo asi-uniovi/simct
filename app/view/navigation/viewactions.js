@@ -129,19 +129,7 @@ class ViewActions extends Observable {
  * @method changeTheme Changes to the next theme in the CSS themes
  */
   changeTheme () {
-    const theme = RotateTheme()
-
-    // Remove the "theme-" from the name for showing it in the menu.
-    const shortTheme = theme.replace('theme-', '')
-
-    // Show the theme in parenthesis in the menu entry with id change-theme. It
-    // it had been added before, there would be the old theme in parenthesis.
-    const menu = document.querySelector('#change-theme')
-    if (menu.innerHTML.indexOf('(') === -1) {
-      menu.innerHTML = menu.innerHTML + ' (' + shortTheme + ')'
-    } else {
-      menu.innerHTML = menu.innerHTML.replace(/\((.*)\)/, '(' + shortTheme + ')')
-    }
+    RotateTheme()
   }
 
   /**
