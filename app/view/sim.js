@@ -269,8 +269,8 @@ class Simulator {
     SVGCable.new(this.simpaths, 'tmpe_set', 'signal', ['tmpe-set']).addAnchor('tmpe_set').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('TMPE-SET', 1, 'RU').addArrow('R', 0)
     SVGCable.new(this.simpaths, 'bus_tmpe_alu', 'bus').addAnchor('tmpe_alu_bus').addPoint(anchors.getAnchor('tmpe_alu_bus')[0], anchors.getAnchor('alu_orig_bottom')[1]).addArrow('U', 1)
 
-    SVGCable.new(this.simpaths, 'bus_tmps_ib', 'bus', ['tmps-ib']).addAnchor('tmps_bus_ib').addPoint(anchors.getAnchor('ibbus_R0')[0] - gr.gridSize * 3, anchors.getAnchor('tmps_bus_ib')[1]).addArrow('R', 1)
-    SVGCable.new(this.simpaths, 'bus_pc_ib', 'bus', ['pc-ib', 'ib-pc']).addAnchor('pc_bus_ib').addPoint(anchors.getAnchor('ibbus_R0')[0] - gr.gridSize * 3, anchors.getAnchor('pc_bus_ib')[1]).addArrow('L', 0).addArrow('R', 1)
+    SVGCable.new(this.simpaths, 'bus_tmps_ib', 'bus', ['tmps-ib']).addAnchor('tmps_bus_ib').addPoint(anchors.getAnchor('ib_registers')[0], anchors.getAnchor('tmps_bus_ib')[1]).addArrow('R', 1)
+    SVGCable.new(this.simpaths, 'bus_pc_ib', 'bus', ['pc-ib', 'ib-pc']).addAnchor('pc_bus_ib').addPoint(anchors.getAnchor('ib_registers')[0], anchors.getAnchor('pc_bus_ib')[1]).addArrow('L', 0).addArrow('R', 1)
     SVGCable.new(this.simpaths, 'bus_pc_ib_2', 'bus', ['pc-ib', '.*-ib.?']).addPoint(...tmpPoints.registerIbbus).addAnchor('ib_registers')
 
     SVGCable.new(this.simpaths, 'tmps_ib', 'signal', ['tmps-ib']).addAnchor('tmps_ib').goLeft(gr.gridTopx(8)).setLabel('TMPS-IB', 1, 'RU').addArrow('R', 0)
@@ -296,7 +296,7 @@ class Simulator {
     SVGCable.new(this.simpaths, 'ExtIrl_ib').addAnchor('ExtIrl_ib_out').addAnchor('ExtIrl_ib_in').setLabel('ExtIrl_IB', 0, 'RU').addArrow('R', 1)
     SVGCable.new(this.simpaths, 'bus_uc_ir', 'bus', ['ib-ir']).addAnchor('ir_in_bus').addAnchor('uc_out_bus').addArrow('L', 0)
 
-    SVGCable.new(this.simpaths, 'bus_ir_ib', 'bus', ['ib-ir', 'ir.*']).addAnchor('ir_bus_ib').addPoint(anchors.getAnchor('ibbus_R0')[0] - gr.gridSize * 3, anchors.getAnchor('ir_bus_ib')[1]).addArrow('L', 0).addArrow('R', 1)
+    SVGCable.new(this.simpaths, 'bus_ir_ib', 'bus', ['ib-ir', 'ir.*']).addAnchor('ir_bus_ib').addPoint(anchors.getAnchor('ib_registers')[0], anchors.getAnchor('ir_bus_ib')[1]).addArrow('L', 0).addArrow('R', 1)
 
     SVGCable.new(this.simpaths, 'ib_mar', 'signal', ['ib-mar']).addAnchor('ib_mar').addPoint(...tmpPoints.registersTop).addAnchor('uc_joint_up').addArrow('L', 0).setLabel('IB-MAR', 1, 'RM')
 
@@ -342,7 +342,7 @@ class Simulator {
     SVGCable.new(this.simpaths, 'cli', 'signal', ['cli']).addAnchor('cli').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').addArrow('R', 0).setLabel('CLI', 1, 'RU')
     SVGCable.new(this.simpaths, 'alu_sr_in', 'signal', ['alu-sr']).addAnchor('alu_sr_out').addAnchor('alu_sr_in').addArrow('U', 2)
 
-    SVGCable.new(this.simpaths, 'bus_sr_ib', 'bus', ['ib-sr', 'sr-ib']).addAnchor('sr_bus_ib').addPoint(anchors.getAnchor('ibbus_R0')[0] - gr.gridSize * 3, anchors.getAnchor('sr_bus_ib')[1]).addArrow('L', 0).addArrow('R', 1)
+    SVGCable.new(this.simpaths, 'bus_sr_ib', 'bus', ['ib-sr', 'sr-ib']).addAnchor('sr_bus_ib').addPoint(anchors.getAnchor('ib_registers')[0], anchors.getAnchor('sr_bus_ib')[1]).addArrow('L', 0).addArrow('R', 1)
 
     SVGCable.new(this.simpaths, 'alu_op_in', 'signal', ['alu-op']).addAnchor('alu_op_in').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('ALU-OP', 1, 'RU').addArrow('R', 0)
     SVGCable.new(this.simpaths, 'alu_carry_in', 'signal', ['carry-in']).addAnchor('alu_carry_in').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('CARRY-IN', 1, 'RU').addArrow('R', 0)
