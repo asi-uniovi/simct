@@ -64,7 +64,7 @@ class CTIO extends CtElement {
 
     group.append(icongroup)
 
-    icongroup.translate(...gr.gridtoxy(1, 10))
+    icongroup.translate(...gr.gridtoxy(0.5, 10))
 
     group.translate(x, y)
 

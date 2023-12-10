@@ -57,7 +57,7 @@ class CTMemory extends CtElement {
 
     group.append(icongroup)
 
-    icongroup.translate(...gr.gridtoxy(1, 10))
+    icongroup.translate(...gr.gridtoxy(0.3, 10))
 
     group.translate(x, y)
 
