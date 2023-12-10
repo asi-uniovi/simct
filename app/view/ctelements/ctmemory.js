@@ -49,7 +49,7 @@ class CTMemory extends CtElement {
       .append(new SVGText(...gr.gridtoxy(1, 8), _jStr(CTMemory.labels.controllabel).translate(), 2.3 * gr.gridSize, 'component-label'))
 
     const icongroup = new SVGGroup('icons-es', this.id)
-    const memory = iconLib.memorygreen()
+    const memory = iconLib.memory()
 
     icongroup.svg.appendChild(memory)
     memory.setAttribute('x', 40)

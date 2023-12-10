@@ -10,6 +10,7 @@ import { _jsc } from '../lib/jsnc.js'
 import { _jStr } from '../lib/jstr.js'
 import { Observer } from '../lib/observer.js'
 import { ContextMenu } from './navigation/contextmenu.js'
+import { iconLib } from './navigation/icons.js'
 
 const contextMenuLabels = {
   delete_module: 'labels.memcfg.delete_module'
@@ -26,9 +27,7 @@ function module (moduleinfo, mem) {
   const moduletype = _jsc({ s: 'div', _class: 'moduletype', _style: { 'margin-top': Math.floor(moduleinfo[1] / 4 * 27 / 2) - 11 + 'px' } })
   const modulesize = _jsc({ s: 'div', _class: 'module-size' })
 
-  const image = _jsc({ s: 'img' })
-
-  image.attr('src', 'app/view/icons/memory.svg')
+  const image = iconLib.memory(24, '--mem-manager-icon-color')
 
   modulesize.text(moduleinfo[1] + 'k')
   moduletype.append(modulesize)
@@ -156,9 +155,7 @@ class MemoryCfg extends Observer {
       const moduletype = _jsc({ s: 'div', _class: 'moduletype', _style: { 'margin-top': Math.floor(modules[i] / 4 * 27 / 2) - 11 + 'px' } })
       const modulesize = _jsc({ s: 'div', _class: 'module-size' })
 
-      const image = _jsc({ s: 'img' })
-
-      image.attr('src', 'app/view/icons/memory.svg')
+      const image = iconLib.memory(24, '--mem-manager-icon-color')
       modulesize.text(modules[i] + 'k')
       moduletype.append(modulesize)
       moduletype.append(image)

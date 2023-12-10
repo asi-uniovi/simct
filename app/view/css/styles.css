@@ -26,6 +26,8 @@
     --menu-hover: #49b58e;
     --mem-manager-labels-color: #c4f2f7;
     --mem-manager-separator-color: #c4f2f7;
+    --mem-manager-module-text-color: #fff;
+    --mem-manager-icon-color: #fff;
     --mem-module4-color: #CCCCCC;
     --mem-module8-color: #8ec3ca;
     --mem-module16-color: #4a89ad;
@@ -61,6 +63,8 @@
     --menu-hover: #E9D8A6;
     --mem-manager-labels-color: #333;
     --mem-manager-separator-color: #575c62;
+    --mem-manager-module-text-color: #fff;
+    --mem-manager-icon-color: #fff;
     --mem-module4-color: #CCCCCC;
     --mem-module8-color: #8ec3ca;
     --mem-module16-color: #4a89ad;
@@ -97,6 +101,8 @@
     --menu-hover: #E9D8A6;
     --mem-manager-labels-color: #333;
     --mem-manager-separator-color: #dbe4ed;
+    --mem-manager-module-text-color: #fff;
+    --mem-manager-icon-color: #fff;
     --mem-module4-color: #CCCCCC;
     --mem-module8-color: #8ec3ca;
     --mem-module16-color: #4a89ad;

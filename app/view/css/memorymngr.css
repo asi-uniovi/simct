@@ -149,7 +149,7 @@
 [class^=mem-module] {
     width: 198px;
     /* margin: 0px auto; */
-    color: var(--main-text-color);
+    color: var(--mem-manager-module-text-color);
     font-weight: bold;
     border: 1px solid var(--window-border-color);
 }
