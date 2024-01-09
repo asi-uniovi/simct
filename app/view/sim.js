@@ -19,6 +19,7 @@ import { _jsc } from '../lib/jsnc.js'
 import { localStorageEx } from '../lib/localstorage.js'
 import { SignalManager } from '../control/signalmanager.js'
 import { Memory } from '../control/memory.js'
+import { Device } from '../control/devices/device.js'
 import { Computer } from '../control/computer.js'
 import { State } from '../config/control.js'
 import { getCookie } from '../lib/cookies.js'
@@ -84,13 +85,14 @@ class Simulator {
       localStorageEx.set('w' + restoreInfo.windows[i].title, restoreInfo.windows[i].position)
     }
     try {
+      const sdbObservers = [this.bus_sdb, this.mdr, this.busMdrSdb, this.busSdbMem, this.busSdbIo]
       restoreInfo.io.devices.forEach(d => {
         switch (d.type) {
           case 'screen': vwactions.screenVW(_this.ct, _this.wm, { name: d.name, basedir: d.address })
             break
-          case 'keyboard': vwactions.keyboardVW(_this.ct, _this.wm, _this.bus_sdb, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
+          case 'keyboard': vwactions.keyboardVW(_this.ct, _this.wm, sdbObservers, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
             break
-          case 'lights': vwactions.lightsVW(_this.ct, _this.wm, _this.bus_sdb, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
+          case 'lights': vwactions.lightsVW(_this.ct, _this.wm, sdbObservers, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
             break
         }
       })
@@ -303,16 +305,16 @@ class Simulator {
     SVGCable.new(this.simpaths, 'uc_mdr_ib', 'signal', ['mdr-ib']).addAnchor('mdr_ib').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('MDR-IB', 0, 'LU', gr.gridTopx(1)).addArrow('R', 0)
     SVGCable.new(this.simpaths, 'uc_ib_mdr', 'signal', ['ib-mdr']).addAnchor('ib_mdr').addPoint(...tmpPoints.uc_inputs_left).addAnchor('uc_out_left').setLabel('IB-MDR', 0, 'LU', gr.gridTopx(1)).addArrow('R', 0)
     SVGCable.new(this.simpaths, 'bus_mdr_ib', 'bus', ['mdr-ib', 'ib-mdr']).addAnchor('mdr_ib_bus').addPoint(anchors.getAnchor('mdr_ib_bus')[0], anchors.getAnchor('tmpe_ib_bus_ib')[1]).addArrow('D', 0).addArrow('U', 1)
-    this.busMdrSdb = SVGCable.new(this.simpaths, 'bus_mdr_sdb', 'bus', ['ib-mdr', Memory.topic.mem_sdb]).addAnchor('mdr_sdb').addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig')[1]).addArrow('U', 0).addArrow('D', 1)
+    this.busMdrSdb = SVGCable.new(this.simpaths, 'bus_mdr_sdb', 'bus', ['ib-mdr', Memory.topic.mem_sdb, Device.topic.dev_sdb]).addAnchor('mdr_sdb').addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig')[1]).addArrow('U', 0).addArrow('D', 1)
     this.ct.mem.subscribe(this.busMdrSdb)
 
-    this.busSdbMem = SVGCable.new(this.simpaths, 'bus_sdb_mem', 'bus', ['ib-mdr', Memory.topic.mem_sdb])
+    this.busSdbMem = SVGCable.new(this.simpaths, 'bus_sdb_mem', 'bus', ['ib-mdr', Memory.topic.mem_sdb, Device.topic.dev_sdb])
       .addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1])
       .addPoint(anchors.getAnchor('mdr_sdb')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1] + gr.gridTopx(2))
       .addPoint(anchors.getAnchor('mem_rightside')[0], anchors.getAnchor('bus_sdb_orig_bottom')[1] + gr.gridTopx(2)).addArrow('U', 0).addArrow('L', 2)
     this.ct.mem.subscribe(this.busSdbMem)
 
-    this.busSdbIo = SVGCable.new(this.simpaths, 'bus_sdb_es', 'bus', ['write', Memory.topic.mem_sdb])
+    this.busSdbIo = SVGCable.new(this.simpaths, 'bus_sdb_es', 'bus', ['ib-mdr', Memory.topic.mem_sdb, Device.topic.dev_sdb])
       .addAnchor('sdb_io_bus')
       .addPoint(anchors.getAnchor('io_leftside')[0], anchors.getAnchor('sdb_io_bus')[1] + gr.gridTopx(2), 'y').addArrow('U', 0).addArrow('R', 2)
     this.ct.mem.subscribe(this.busSdbIo)
@@ -394,8 +396,9 @@ class Simulator {
     this.memory.memoryEditor(function () { vwactions.memoryEditor(_this.ct, _this.wm) })
 
     this.io.addScreen(function () { vwactions.addScreen(_this.ct, _this.wm) })
-    this.io.addKeyboard(function () { vwactions.addKeyboard(_this.ct, _this.wm, _this.bus_sdb) })
-    this.io.addLights(function () { vwactions.addLights(_this.ct, _this.wm, _this.bus_sdb) })
+    const sdbObservers = [this.bus_sdb, this.mdr, this.busMdrSdb, this.busSdbMem, this.busSdbIo]
+    this.io.addKeyboard(function () { vwactions.addKeyboard(_this.ct, _this.wm, sdbObservers) })
+    this.io.addLights(function () { vwactions.addLights(_this.ct, _this.wm, sdbObservers) })
 
     this.ct.reset()
   }
