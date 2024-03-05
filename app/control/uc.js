@@ -232,7 +232,9 @@ class Uc extends ObservableObserver {
    * @returns {boolean} true if the step was executed successfully
    */
   runStep () {
+    // The values of carry_in and IB should not be kept between steps
     this.cpu.alu.carry_in = 0
+    this.cpu.ib.value = 0
 
     if (this.mode === Uc.mode.manual) {
       try {
