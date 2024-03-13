@@ -161,7 +161,8 @@ function Menu (computer, sim, wm) {
           title: _jStr(menuOptions.menu_utils_io_keyboard).translate(),
           id: 'connect-keyboard',
           action: function () {
-            vwactions.addKeyboard(computer, wm)
+            const sdbObservers = [sim.bus_sdb, sim.mdr, sim.busMdrSdb, sim.busSdbMem, sim.busSdbIo]
+            vwactions.addKeyboard(computer, wm, sdbObservers)
           }
         }, {
           title: _jStr(menuOptions.menu_utils_io_screen).translate(),
@@ -173,7 +174,8 @@ function Menu (computer, sim, wm) {
           title: _jStr(menuOptions.menu_utils_io_lights).translate(),
           id: 'connect-lights',
           action: function () {
-            vwactions.addLights(computer, wm)
+            const sdbObservers = [sim.bus_sdb, sim.mdr, sim.busMdrSdb, sim.busSdbMem, sim.busSdbIo]
+            vwactions.addLights(computer, wm, sdbObservers)
           }
         }]
       }]
