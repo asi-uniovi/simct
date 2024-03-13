@@ -97,7 +97,8 @@ class Simulator {
         }
       })
     } catch (e) {
-      alert(_jStr(e.message).translate())
+      console.log(e)
+      alert(_jStr(e.message).translate() || 'Unexpected error in restore event in simulator.js')
     }
   }
 

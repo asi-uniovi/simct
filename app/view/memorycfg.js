@@ -194,7 +194,8 @@ class MemoryCfg extends Observer {
           that.moduledragSize = null
           that.redrawMem()
         } catch (e) {
-          alert(_jStr(e.message).translate())
+          console.log(e)
+          alert(_jStr(e.message).translate() || 'Unexpected error in mouseup event in memorycfg.js')
         }
       }
     })

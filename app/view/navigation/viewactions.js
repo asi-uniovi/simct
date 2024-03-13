@@ -175,7 +175,8 @@ class ViewActions extends Observable {
         try {
           ct.loadProgram(fr.result.replaceAll('\t', '\n').replaceAll(' ', '\n').replaceAll('\r', '').split('\n').filter((e) => e.trim() !== ''))
         } catch (e) {
-          alert(_jStr(e.message).translate())
+          console.log(e)
+          alert(_jStr(e.message).translate() || 'Unexpected error in ViewActions.loadProgram')
         }
       }
       fr.readAsText(this.files[0])
@@ -267,7 +268,8 @@ class ViewActions extends Observable {
         try {
           ct.loadMemory(fr.result.replaceAll('\t', '\n').replaceAll(' ', '\n').replaceAll('\r', '').split('\n').filter((e) => e.trim() !== ''), position)
         } catch (e) {
-          alert(_jStr(e.message).translate())
+          console.log(e)
+          alert(_jStr(e.message).translate() || 'Unexpected error in ViewActions.loadMemory')
         }
 
         callback()
@@ -320,7 +322,8 @@ class ViewActions extends Observable {
         _this.screenVW(ct, wm, { name: form.name, basedir: bc.hex2dec(form.basedir) })
         wm.remove(wf)
       } catch (e) {
-        alert(_jStr(e.message).translate())
+        console.log(e)
+        alert(_jStr(e.message).translate() || 'Unexpected error in ViewActions.addScreen')
       }
     })
 
@@ -370,7 +373,8 @@ class ViewActions extends Observable {
         _this.keyboardVW(ct, wm, sdbObservers, { name: form.name, basedir: bc.hex2dec(form.basedir), vector: form.vector * 1, priority: form.priority * 1, int: form.int })
         wm.remove(wf)
       } catch (e) {
-        alert(_jStr(e.message).translate())
+        console.log(e)
+        alert(_jStr(e.message).translate() || 'Unexpected error in ViewActions.addKeyboard')
       }
     })
 
@@ -427,7 +431,8 @@ class ViewActions extends Observable {
         _this.lightsVW(ct, wm, sdbObservers, { name: form.name, basedir: bc.hex2dec(form.basedir), vector: form.vector * 1, priority: form.priority * 1, int: form.int })
         wm.remove(wf)
       } catch (e) {
-        alert(_jStr(e.message).translate())
+        console.log(e)
+        alert(_jStr(e.message).translate() || 'Unexpected error in ViewActions.addLights')
       }
     })
 
