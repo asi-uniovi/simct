@@ -81,7 +81,14 @@ class CTScreen extends Observer {
     const character = +(hex & 0x00FF)
     const fgcolor = (hex & 0x0700) >> 8
     const bgcolor = (hex & 0x3800) >> 11
-    return '<div style="color:' + colors[fgcolor] + ';background-color:' + colors[bgcolor] + '">' + String.fromCharCode(character) + '</div>'
+
+    let htmlChar = String.fromCharCode(character)
+    if (htmlChar === ' ') {
+      // This is a special case, because HTML does not show a space
+      htmlChar = '&nbsp;'
+    }
+
+    return '<div style="color:' + colors[fgcolor] + ';background-color:' + colors[bgcolor] + '">' + htmlChar + '</div>'
   }
 
   /**
