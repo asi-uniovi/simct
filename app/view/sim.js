@@ -90,9 +90,9 @@ class Simulator {
         switch (d.type) {
           case 'screen': vwactions.screenVW(_this.ct, _this.wm, { name: d.name, basedir: d.address })
             break
-          case 'keyboard': vwactions.keyboardVW(_this.ct, _this.wm, sdbObservers, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
+          case 'keyboard': vwactions.keyboardVW(_this.ct, _this.wm, sdbObservers, { name: d.name, basedir: d.address, vector: d.vector, priority: d.priority, int: d.int })
             break
-          case 'lights': vwactions.lightsVW(_this.ct, _this.wm, sdbObservers, { name: d.name, basedir: d.address, vector: d.vector, priority: d.vector, int: d.int })
+          case 'lights': vwactions.lightsVW(_this.ct, _this.wm, sdbObservers, { name: d.name, basedir: d.address, vector: d.vector, priority: d.priority, int: d.int })
             break
         }
       })
