@@ -388,6 +388,23 @@ class Simulator {
     const langMenu = LangMenu(this)
     document.querySelector('#menu-main').append(langMenu.element)
 
+    // Create a container for the language menu
+    const langContainer = document.createElement('div')
+    langContainer.className = 'lang-container'
+
+    // Move the language menu into this container
+    const langMenuElement = document.querySelector('.lang-menu')
+    langMenuElement.parentNode.insertBefore(langContainer, langMenuElement)
+    langContainer.appendChild(langMenuElement)
+
+    // Create the version indicator as a ul/li structure like the language menu
+    const versionIndicator = document.createElement('ul')
+    versionIndicator.className = 'version-menu'
+    const versionLi = document.createElement('li')
+    versionLi.textContent = 'v1.0.1'
+    versionIndicator.appendChild(versionLi)
+    langContainer.insertBefore(versionIndicator, langMenuElement)
+
     const sim = this
     this.uc.setSignalSelector(function () {
       vwactions.signalSelector(_this.ct, sim, _this.wm)
