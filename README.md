@@ -67,3 +67,26 @@ Estas extensiones facilitan el desarrollo en Visual Studio Code:
 
 Si se desean compartir los cambios que se hagan al código, se recomienda clonar
 este repositorio y hacer un pull request.
+
+## Versioning
+
+The project version is defined in the file `app/config/version.js`.
+To update the version, simply modify the `version` constant in this file.
+
+After updating the version number and committing the change, remember to create a git tag for the new version:
+
+```bash
+git tag <new_version_number>
+git push origin <new_version_number>
+```
+
+Replace `<new_version_number>` with the actual version number (e.g., `v1.0.2`).
+
+## Changelog
+
+### v1.0.2
+- Prevent the user from moving windows outside the screen.
+
+### v1.0.1
+- First release with versioning system.
+
