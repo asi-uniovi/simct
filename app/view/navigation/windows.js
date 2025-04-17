@@ -254,7 +254,7 @@ class WindowManager {
   }
 
   get activeWindows () {
-    return WindowManager.windows.length
+    return Object.keys(WindowManager.windows).length
   }
 }
 
