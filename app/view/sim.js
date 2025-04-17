@@ -15,6 +15,7 @@ import { WindowManager } from './navigation/windows.js'
 import { LangMenu, Menu } from './navigation/menu/menu.js'
 import { _jStr } from '../lib/jstr.js'
 import { _jsc } from '../lib/jsnc.js'
+import { version } from '../config/version.js';
 
 import { localStorageEx } from '../lib/localstorage.js'
 import { SignalManager } from '../control/signalmanager.js'
@@ -401,7 +402,7 @@ class Simulator {
     const versionIndicator = document.createElement('ul')
     versionIndicator.className = 'version-menu'
     const versionLi = document.createElement('li')
-    versionLi.textContent = 'v1.0.1'
+    versionLi.textContent = version; // Use the imported version
     versionIndicator.appendChild(versionLi)
     langContainer.insertBefore(versionIndicator, langMenuElement)
 
