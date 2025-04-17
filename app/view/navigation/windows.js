@@ -72,7 +72,28 @@ class WindowTPL {
     _this.w.style.boxShadow = '0px 0px 1px 1px var(--window-border-color)'
 
     _this.w.movetoXY = function (x, y) {
-      const position = { left: x - _this.lastPosition.offsetx + 'px', top: y - _this.lastPosition.offsety + 'px' }
+      let newLeft = x - _this.lastPosition.offsetx;
+      let newTop = y - _this.lastPosition.offsety;
+      const windowWidth = _this.w.element.offsetWidth;
+      const windowHeight = _this.w.element.offsetHeight;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      // Prevent the window from moving completely off the screen edges
+      if (newTop < 0) {
+        newTop = 0;
+      }
+      if (newLeft < 0) {
+        newLeft = 0;
+      }
+      if (newLeft + windowWidth > viewportWidth) {
+        newLeft = viewportWidth - windowWidth;
+      }
+      if (newTop + windowHeight > viewportHeight) {
+        newTop = viewportHeight - windowHeight;
+      }
+
+      const position = { left: newLeft + 'px', top: newTop + 'px' }
       _this.w.style(position)
       localSt.set('w' + _this.title, position)
     }
