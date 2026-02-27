@@ -68,25 +68,31 @@ Estas extensiones facilitan el desarrollo en Visual Studio Code:
 Si se desean compartir los cambios que se hagan al código, se recomienda clonar
 este repositorio y hacer un pull request.
 
-## Versioning
+## Versionado
 
-The project version is defined in the file `app/config/version.js`.
-To update the version, simply modify the `version` constant in this file.
+La versión del proyecto se define en el archivo `app/config/version.js`.
+Para actualizarla, simplemente hay que modificar la constante `version` en este archivo.
 
-After updating the version number and committing the change, remember to create a git tag for the new version:
+Tras actualizar el número de versión y hacer el *commit* correspondiente, es conveniente
+crear una etiqueta de git para la nueva versión:
 
 ```bash
-git tag <new_version_number>
-git push origin <new_version_number>
+git tag <nuevo_numero_de_version>
+git push origin <nuevo_numero_de_version>
 ```
 
-Replace `<new_version_number>` with the actual version number (e.g., `v1.0.2`).
+Se debe sustituir `<nuevo_numero_de_version>` por el número de versión real (p. ej.,
+`v1.0.2`).
 
-## Changelog
+## Historial de versiones
+
+### v1.0.3
+
+- Arreglar error en la resta y la instrucción de comparación para número enteros.
 
 ### v1.0.2
-- Prevent the user from moving windows outside the screen.
+- Evitar que el usuario pueda mover ventanas fuera de la pantalla.
 
 ### v1.0.1
-- First release with versioning system.
+- Primera versión con sistema de versionado.
 
