@@ -113,6 +113,58 @@ describe('Arithmetic an Logic unit', function () {
     expect(alu.zf).toBe(0x0)
   })
 
+  test('Test CMP 0000h - 8000h (flags ZCOS=0111)', () => {
+    const alu = new Alu()
+    alu.a = 0x0000
+    alu.b = 0x8000
+    alu.operate(Alu.operation.sub)
+
+    expect(alu.result.value).toBe(0x8000)
+    expect(alu.zf).toBe(0)
+    expect(alu.cf).toBe(1)
+    expect(alu.of).toBe(1)
+    expect(alu.sf).toBe(1)
+  })
+
+  test('Test CMP 0000h - 8001h (flags ZCOS=0100)', () => {
+    const alu = new Alu()
+    alu.a = 0x0000
+    alu.b = 0x8001
+    alu.operate(Alu.operation.sub)
+
+    expect(alu.result.value).toBe(0x7FFF)
+    expect(alu.zf).toBe(0)
+    expect(alu.cf).toBe(1)
+    expect(alu.of).toBe(0)
+    expect(alu.sf).toBe(0)
+  })
+
+  test('Test CMP 8000h - 0000h (flags ZCOS=0001)', () => {
+    const alu = new Alu()
+    alu.a = 0x8000
+    alu.b = 0x0000
+    alu.operate(Alu.operation.sub)
+
+    expect(alu.result.value).toBe(0x8000)
+    expect(alu.zf).toBe(0)
+    expect(alu.cf).toBe(0)
+    expect(alu.of).toBe(0)
+    expect(alu.sf).toBe(1)
+  })
+
+  test('Test CMP 8001h - 0000h (flags ZCOS=0001)', () => {
+    const alu = new Alu()
+    alu.a = 0x8001
+    alu.b = 0x0000
+    alu.operate(Alu.operation.sub)
+
+    expect(alu.result.value).toBe(0x8001)
+    expect(alu.zf).toBe(0)
+    expect(alu.cf).toBe(0)
+    expect(alu.of).toBe(0)
+    expect(alu.sf).toBe(1)
+  })
+
   test('Test OR operation', () => {
     const alu = new Alu()
 

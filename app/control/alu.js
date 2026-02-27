@@ -181,15 +181,12 @@ class Alu extends ObservableObserver {
         break
       case Alu.operation.sub:
 
-        tmpResult = this.a + ~this.b + 1
+        tmpResult = this.a + ((~this.b) & 0xFFFF) + 1
 
         this.result.value = tmpResult & 0xFFFF
 
-        if (!positive(tmpResult)) this.cf = 1
-        else this.cf = 0
-
-        // if ((a > 0 && b < 0 && this.result.value < 0) || (a < 0 && b > 0 && this.result.value > 0)) this.of = 1
-        // else this.of = 0
+        if (this.a >= this.b) this.cf = 0
+        else this.cf = 1
 
         if ((positive(this.a) && !positive(this.b) && !positive(this.result.value)) || (!positive(this.a) && positive(this.b) && positive(this.result.value))) this.of = 1
         else this.of = 0
