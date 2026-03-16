@@ -103,14 +103,15 @@ class CTKeyboard extends Observer {
     const _this = this
     const button = _jsc({ s: 'button' })
     button.addClass('keyboard-button')
-    button.text(value)
-
     switch (value) {
       case ' ':button.addClass('keyboard-button-space')
-
+        button.text(value)
         break
       case '#': button.addClass('keyboard-button-caps')
+        button.text(_jStr(CTKeyboard.labels.caps).translate())
         break
+      default:
+        button.text(value)
     }
 
     button.on('click', function () {
