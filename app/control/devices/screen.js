@@ -48,7 +48,7 @@ class Screen extends Device {
    */
   reset () {
     this._positions = []
-    this.controlregister = 0x0002
+    this.controlregister = 0x0000
     this.reportUpdate()
   }
 
@@ -75,7 +75,7 @@ class Screen extends Device {
    * @method powerOn Turn on the device
    */
   powerOn () {
-    this.setPos(120, Bitop.on(this.controlregister, 1))
+    this.setPos(120, Bitop.off(this.controlregister, 1))
     // this.reportUpdate()
   }
 
@@ -83,15 +83,15 @@ class Screen extends Device {
    * @method powerOff Turn off the device
    */
   powerOff () {
-    this.setPos(120, Bitop.off(this.controlregister, 1))
+    this.setPos(120, Bitop.on(this.controlregister, 1))
   }
 
   /**
    * @method isOn Check if the device is on
-   * @returns {boolean} True if the device is on
+   * @returns {boolean} True if the device is on (bit 1 = 1 means OFF per spec)
    */
   isOn () {
-    return Bitop.isOn(this.controlregister, 1)
+    return !Bitop.isOn(this.controlregister, 1) // Bit 1 = 1 means OFF per spec
   }
 
   /**

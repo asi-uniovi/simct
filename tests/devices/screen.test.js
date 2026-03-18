@@ -62,9 +62,52 @@ test('Test powered off no characters', () => {
   expect(pantalla.positions.length).toBe(0)
   pantalla.powerOn()
   expect(pantalla.positions.length).toBe(chars.length)
-  pantalla.setPos(120, 0x0003)
+  pantalla.setPos(120, 0x0001)
   expect(pantalla.isOn()).toBe(true)
   expect(pantalla.positions.length).toBe(0)
+})
+
+describe('Control register bit 0 (clear) and bit 1 (power off)', () => {
+  const writeChars = (pantalla, chars) => {
+    chars.split('').forEach((k, i) => {
+      pantalla.setPos(i, k.charCodeAt(0) & 0x00FF)
+    })
+  }
+
+  test('0x0000 - screen stays on, no clear', () => {
+    const pantalla = new Screen('Pantalla 1', 0xF000)
+    writeChars(pantalla, 'abc')
+    pantalla.setPos(120, 0x0000)
+    expect(pantalla.isOn()).toBe(true)
+    expect(pantalla.positions.length).toBe(3)
+  })
+
+  test('0x0001 - screen stays on, clears content', () => {
+    const pantalla = new Screen('Pantalla 1', 0xF000)
+    writeChars(pantalla, 'abc')
+    pantalla.setPos(120, 0x0001)
+    expect(pantalla.isOn()).toBe(true)
+    expect(pantalla.positions.length).toBe(0)
+  })
+
+  test('0x0002 - screen turns off, content preserved', () => {
+    const pantalla = new Screen('Pantalla 1', 0xF000)
+    writeChars(pantalla, 'abc')
+    pantalla.setPos(120, 0x0002)
+    expect(pantalla.isOn()).toBe(false)
+    pantalla.setPos(120, 0x0000)
+    expect(pantalla.isOn()).toBe(true)
+    expect(pantalla.positions.length).toBe(3)
+  })
+
+  test('0x0003 - screen turns off, clears content', () => {
+    const pantalla = new Screen('Pantalla 1', 0xF000)
+    writeChars(pantalla, 'abc')
+    pantalla.setPos(120, 0x0003)
+    expect(pantalla.isOn()).toBe(false)
+    expect(pantalla._positions.length).toBe(0)
+  })
+
 })
 
 test('Test update notifications', () => {
